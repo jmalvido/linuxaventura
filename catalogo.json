@@ -1,0 +1,21 @@
+{
+  "schema": 1,
+  "actividades": [
+    {
+      "archivo": "actividad_001.json",
+      "sha256": "cda08ac3ba11723fbd17c688ca0195908f2249d642709e24dc9f760aaa86346e"
+    },
+    {
+      "archivo": "actividad_002.json",
+      "sha256": "fcb52b3281c05dcbda1ecd894fee182f7b29076f983539d5d823ccc2d1e6642c"
+    },
+    {
+      "archivo": "actividad_003.json",
+      "sha256": "d9f030e07fcbdda48f02e08a541f1ec0f822c7acbb18f304d648b70cd9e287dd"
+    },
+    {
+      "archivo": "actividad_004.json",
+      "sha256": "11a55cfedff791a44b454e738a943bdacc1eb802bd0b99e778774bdc2e6f4e4c"
+    }
+  ]
+}

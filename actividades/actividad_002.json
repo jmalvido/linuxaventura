@@ -1,0 +1,166 @@
+{
+  "schema": 1,
+  "id": "actividad_002",
+  "version": 1,
+  "titulo": {
+    "es": "Bienvenido a Linux 2 — Explora las carpetas",
+    "eu": "Ongi etorri Linuxera 2 — Arakatu karpetak"
+  },
+  "carpetas": [],
+  "archivos": {
+    "LEEME.txt": {
+      "es": "Hoy vas a explorar el centro de comunicaciones.\nEl primer documento está dentro de centro.\n",
+      "eu": "Gaur komunikazio-zentroa arakatuko duzu.\nLehen dokumentua centro karpetaren barruan dago.\n"
+    },
+    "centro/entrada.txt": {
+      "es": "Has llegado a recepción.\nEl responsable se llama: ALEX\nDentro de archivo encontrarás el siguiente mensaje.\n",
+      "eu": "Harrerara iritsi zara.\nArduradunaren izena: ALEX\nHurrengo mezua archivo karpetan aurkituko duzu.\n"
+    },
+    "centro/archivo/nota.txt": {
+      "es": "Código del archivo: NORTE\nHay otra pista oculta en esta misma carpeta.\n",
+      "eu": "Artxiboko kodea: NORTE\nKarpeta honetan ezkutuko beste aztarna bat dago.\n"
+    },
+    "centro/archivo/.pista.txt": {
+      "es": "Los nombres que empiezan por punto suelen ocultarse en los listados normales.\nClave oculta: LUNA\n",
+      "eu": "Puntuz hasten diren izenak normalean ez dira zerrenda arruntetan agertzen.\nEzkutuko gakoa: LUNA\n"
+    }
+  },
+  "pasos": [
+    {
+      "texto": {
+        "es": "Lee la introducción con cat LEEME.txt.\ncd cambia de carpeta. Usa:\n  ls\n  cd centro\n  pwd\n  ls\n  cat entrada.txt\nDespués escribe COMPROBAR: ¿quién es el responsable?",
+        "eu": "Irakurri sarrera cat LEEME.txt erabiliz.\ncd komandoak karpetaz aldatzen du. Erabili:\n  ls\n  cd centro\n  pwd\n  ls\n  cat entrada.txt\nOndoren, idatzi COMPROBAR: nor da arduraduna?"
+      },
+      "pistas": {
+        "es": [
+          "Entra en centro antes de leer entrada.txt.",
+          "Si te pierdes, vuelve con cd \"{escenario}\" y ejecuta cd centro; después cat entrada.txt."
+        ],
+        "eu": [
+          "Sartu centro karpetan entrada.txt irakurri aurretik.",
+          "Galtzen bazara: cd \"{escenario}\" eta cd centro; ondoren cat entrada.txt."
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "respuesta",
+          "pregunta": {
+            "es": "Responsable:",
+            "eu": "Arduraduna:"
+          },
+          "respuestas": {
+            "es": [
+              "ALEX"
+            ],
+            "eu": [
+              "ALEX"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "texto": {
+        "es": "Una ruta relativa parte de la carpeta actual. Desde centro:\n  cd archivo\n  cat nota.txt\nUsa pwd para ver dónde estás. Escribe COMPROBAR e indica el código del archivo.",
+        "eu": "Bide erlatiboa uneko karpetatik abiatzen da. centro karpetatik:\n  cd archivo\n  cat nota.txt\nErabili pwd non zauden ikusteko. Idatzi COMPROBAR eta adierazi artxiboko kodea."
+      },
+      "pistas": {
+        "es": [
+          "archivo está dentro de centro.",
+          "Desde la raíz del escenario puedes ejecutar cd centro/archivo y cat nota.txt."
+        ],
+        "eu": [
+          "archivo karpeta centro barruan dago.",
+          "Eszenatokiaren errotik cd centro/archivo eta cat nota.txt erabil ditzakezu."
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "respuesta",
+          "pregunta": {
+            "es": "Código del archivo:",
+            "eu": "Artxiboko kodea:"
+          },
+          "respuestas": {
+            "es": [
+              "NORTE"
+            ],
+            "eu": [
+              "NORTE"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "texto": {
+        "es": "ls no muestra normalmente los nombres que empiezan por punto.\nEn centro/archivo compara:\n  ls\n  ls -a\nLee el archivo .pista.txt con cat y escribe COMPROBAR.\nLos elementos . y .. representan la carpeta actual y la superior.",
+        "eu": "ls komandoak normalean ez ditu puntuz hasten diren izenak erakusten.\ncentro/archivo karpetan alderatu:\n  ls\n  ls -a\nIrakurri .pista.txt cat erabiliz eta idatzi COMPROBAR.\n. eta .. elementuek uneko karpeta eta goikoa adierazten dituzte."
+      },
+      "pistas": {
+        "es": [
+          "El punto forma parte del nombre: no lo omitas.",
+          "Ejecuta cat .pista.txt dentro de centro/archivo."
+        ],
+        "eu": [
+          "Puntua izenaren parte da: ez kendu.",
+          "Exekutatu cat .pista.txt centro/archivo karpetan."
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "respuesta",
+          "pregunta": {
+            "es": "Clave oculta:",
+            "eu": "Ezkutuko gakoa:"
+          },
+          "respuestas": {
+            "es": [
+              "LUNA"
+            ],
+            "eu": [
+              "LUNA"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "texto": {
+        "es": "cd .. sube una carpeta. Desde centro/archivo:\n  cd ..\n  pwd\n  ls\nComprueba que has vuelto a centro. Ejecuta COMPROBAR y escribe el nombre del archivo .txt que hay directamente en centro.\nPara volver a la raíz del escenario desde centro: cd ..",
+        "eu": "cd .. komandoak karpeta bat gora egiten du. centro/archivo karpetatik:\n  cd ..\n  pwd\n  ls\nEgiaztatu centro karpetara itzuli zarela. Exekutatu COMPROBAR eta idatzi centro barruan zuzenean dagoen .txt fitxategiaren izena.\ncentro karpetatik eszenatokiaren errora itzultzeko: cd .."
+      },
+      "pistas": {
+        "es": [
+          "cd .. tiene un espacio antes de los dos puntos.",
+          "En centro verás entrada.txt y la carpeta archivo."
+        ],
+        "eu": [
+          "cd .. komandoan zuriune bat dago bi puntuen aurretik.",
+          "centro karpetan entrada.txt eta archivo karpeta ikusiko dituzu."
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "respuesta",
+          "pregunta": {
+            "es": "Nombre del archivo .txt:",
+            "eu": ".txt fitxategiaren izena:"
+          },
+          "respuestas": {
+            "es": [
+              "entrada.txt"
+            ],
+            "eu": [
+              "entrada.txt"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "final": {
+    "es": "¡Actividad completada! Puedes seguir practicando, escribir MENU o REINICIAR para repetirla.",
+    "eu": "Jarduera osatuta! Praktikatzen jarraitu, MENU idatzi edo REINICIAR erabil dezakezu berriro egiteko."
+  }
+}

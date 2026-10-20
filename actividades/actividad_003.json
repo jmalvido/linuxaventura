@@ -1,0 +1,257 @@
+{
+  "schema": 1,
+  "id": "actividad_003",
+  "version": 1,
+  "titulo": {
+    "es": "Bienvenido a Linux 3 — Organiza tus archivos",
+    "eu": "Ongi etorri Linuxera 3 — Antolatu fitxategiak"
+  },
+  "carpetas": [],
+  "archivos": {
+    "LEEME.txt": {
+      "es": "Misión de entrenamiento: preparar un refugio con documentos y una señal de disponibilidad.\nLos documentos originales están en documentos.\n",
+      "eu": "Entrenamendua: prestatu babesleku bat dokumentuekin eta prest dagoela adierazteko seinale batekin.\nJatorrizko dokumentuak documentos karpetan daude.\n"
+    },
+    "documentos/mapa.txt": {
+      "es": "Mapa del refugio. Entrada: puerta norte. Punto de reunión: patio.\n",
+      "eu": "Babeslekuaren mapa. Sarrera: iparraldeko atea. Elkargunea: patioa.\n"
+    },
+    "documentos/normas.txt": {
+      "es": "Conserva los originales. Mantén despejadas las salidas.\n",
+      "eu": "Mantendu jatorrizkoak. Utzi irteerak libre.\n"
+    }
+  },
+  "pasos": [
+    {
+      "texto": {
+        "es": "Lee LEEME.txt con cat.\nmkdir crea carpetas. Desde la raíz del escenario, ejecuta:\n  mkdir refugio\n  mkdir refugio/copias\nDespués escribe COMPROBAR. Las carpetas deben llamarse exactamente así.",
+        "eu": "Irakurri LEEME.txt cat erabiliz.\nmkdir komandoak karpetak sortzen ditu. Eszenatokiaren errotik, exekutatu:\n  mkdir refugio\n  mkdir refugio/copias\nOndoren, idatzi COMPROBAR. Karpetek izen horiek izan behar dituzte."
+      },
+      "pistas": {
+        "es": [
+          "Crea primero la carpeta superior y después la interior.",
+          "Si alguna ya existe, no hace falta repetirla. Usa ls refugio para revisar."
+        ],
+        "eu": [
+          "Sortu lehenik goiko karpeta eta ondoren barrukoa.",
+          "Dagoeneko sortuta badago, ez errepikatu. Erabili ls refugio egiaztatzeko."
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "carpeta",
+          "ruta": "refugio",
+          "error": {
+            "es": "Revisa este objetivo: refugio. Escribe PISTA si necesitas ayuda.",
+            "eu": "Berrikusi helburu hau: refugio. Laguntza behar baduzu, idatzi PISTA."
+          }
+        },
+        {
+          "tipo": "carpeta",
+          "ruta": "refugio/copias",
+          "error": {
+            "es": "Revisa este objetivo: refugio/copias. Escribe PISTA si necesitas ayuda.",
+            "eu": "Berrikusi helburu hau: refugio/copias. Laguntza behar baduzu, idatzi PISTA."
+          }
+        }
+      ]
+    },
+    {
+      "texto": {
+        "es": "cp copia: el original permanece en su sitio.\nSintaxis: cp ORIGEN DESTINO\nEjecuta:\n  cp documentos/mapa.txt refugio/copias/\n  ls documentos\n  ls refugio/copias\nDespués COMPROBAR. Revisaremos la copia y el original.",
+        "eu": "cp komandoak kopiatu egiten du: jatorrizkoa bere lekuan geratzen da.\nSintaxia: cp JATORRIA HELMUGA\nExekutatu:\n  cp documentos/mapa.txt refugio/copias/\n  ls documentos\n  ls refugio/copias\nOndoren COMPROBAR. Kopia eta jatorrizkoa egiaztatuko ditugu."
+      },
+      "pistas": {
+        "es": [
+          "La carpeta refugio/copias ya debe existir.",
+          "Desde la raíz: cp documentos/mapa.txt refugio/copias/"
+        ],
+        "eu": [
+          "refugio/copias karpetak sortuta egon behar du.",
+          "Errotik: cp documentos/mapa.txt refugio/copias/"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "contenido",
+          "ruta": "refugio/copias/mapa.txt",
+          "origen": "documentos/mapa.txt",
+          "error": {
+            "es": "Revisa este objetivo: refugio/copias/mapa.txt. Escribe PISTA si necesitas ayuda.",
+            "eu": "Berrikusi helburu hau: refugio/copias/mapa.txt. Laguntza behar baduzu, idatzi PISTA."
+          }
+        },
+        {
+          "tipo": "contenido",
+          "ruta": "documentos/mapa.txt",
+          "origen": "documentos/mapa.txt",
+          "error": {
+            "es": "Revisa este objetivo: documentos/mapa.txt. Escribe PISTA si necesitas ayuda.",
+            "eu": "Berrikusi helburu hau: documentos/mapa.txt. Laguntza behar baduzu, idatzi PISTA."
+          }
+        }
+      ]
+    },
+    {
+      "texto": {
+        "es": "mv sirve para mover o renombrar. Vamos a renombrar la copia:\n  mv refugio/copias/mapa.txt refugio/copias/plano.txt\nEscribe COMPROBAR. El original documentos/mapa.txt debe conservarse.",
+        "eu": "mv komandoak mugitzeko edo izena aldatzeko balio du. Aldatu kopiaren izena:\n  mv refugio/copias/mapa.txt refugio/copias/plano.txt\nIdatzi COMPROBAR. documentos/mapa.txt jatorrizkoa mantendu behar da."
+      },
+      "pistas": {
+        "es": [
+          "El origen es la copia, no el documento original.",
+          "mv cambia el nombre cuando origen y destino están en la misma carpeta."
+        ],
+        "eu": [
+          "Jatorria kopia da, ez jatorrizko dokumentua.",
+          "mv komandoak izena aldatzen du jatorria eta helmuga karpeta berean daudenean."
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "contenido",
+          "ruta": "refugio/copias/plano.txt",
+          "origen": "documentos/mapa.txt",
+          "error": {
+            "es": "Revisa este objetivo: refugio/copias/plano.txt. Escribe PISTA si necesitas ayuda.",
+            "eu": "Berrikusi helburu hau: refugio/copias/plano.txt. Laguntza behar baduzu, idatzi PISTA."
+          }
+        },
+        {
+          "tipo": "ausente",
+          "ruta": "refugio/copias/mapa.txt",
+          "error": {
+            "es": "Revisa este objetivo: refugio/copias/mapa.txt. Escribe PISTA si necesitas ayuda.",
+            "eu": "Berrikusi helburu hau: refugio/copias/mapa.txt. Laguntza behar baduzu, idatzi PISTA."
+          }
+        },
+        {
+          "tipo": "contenido",
+          "ruta": "documentos/mapa.txt",
+          "origen": "documentos/mapa.txt",
+          "error": {
+            "es": "Revisa este objetivo: documentos/mapa.txt. Escribe PISTA si necesitas ayuda.",
+            "eu": "Berrikusi helburu hau: documentos/mapa.txt. Laguntza behar baduzu, idatzi PISTA."
+          }
+        }
+      ]
+    },
+    {
+      "texto": {
+        "es": "Ahora usa mv para cambiar de carpeta:\n  mv refugio/copias/plano.txt refugio/plano.txt\nLa copia debe quedar directamente dentro de refugio.\nEscribe COMPROBAR.",
+        "eu": "Orain erabili mv karpetaz aldatzeko:\n  mv refugio/copias/plano.txt refugio/plano.txt\nKopia refugio karpetan zuzenean geratu behar da.\nIdatzi COMPROBAR."
+      },
+      "pistas": {
+        "es": [
+          "Mover no deja otra copia en la ubicación anterior.",
+          "Revisa con ls refugio y ls refugio/copias."
+        ],
+        "eu": [
+          "Mugitzean ez da beste kopiarik geratzen aurreko kokalekuan.",
+          "Egiaztatu ls refugio eta ls refugio/copias erabiliz."
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "contenido",
+          "ruta": "refugio/plano.txt",
+          "origen": "documentos/mapa.txt",
+          "error": {
+            "es": "Revisa este objetivo: refugio/plano.txt. Escribe PISTA si necesitas ayuda.",
+            "eu": "Berrikusi helburu hau: refugio/plano.txt. Laguntza behar baduzu, idatzi PISTA."
+          }
+        },
+        {
+          "tipo": "ausente",
+          "ruta": "refugio/copias/plano.txt",
+          "error": {
+            "es": "Revisa este objetivo: refugio/copias/plano.txt. Escribe PISTA si necesitas ayuda.",
+            "eu": "Berrikusi helburu hau: refugio/copias/plano.txt. Laguntza behar baduzu, idatzi PISTA."
+          }
+        }
+      ]
+    },
+    {
+      "texto": {
+        "es": "touch crea un archivo vacío si todavía no existe. Si existe, actualiza sus marcas de tiempo: no borra su contenido.\nCrea la señal:\n  touch refugio/listo.txt\nPara terminar, copia documentos/normas.txt a refugio/copias/ usando lo aprendido.\nEscribe COMPROBAR. Revisaremos todo el resultado final.",
+        "eu": "touch komandoak fitxategi huts bat sortzen du oraindik ez badago. Badago, denbora-markak eguneratzen ditu: ez du edukia ezabatzen.\nSortu seinalea:\n  touch refugio/listo.txt\nAmaitzeko, kopiatu documentos/normas.txt refugio/copias/ karpetara, ikasitakoa erabiliz.\nIdatzi COMPROBAR. Azken emaitza osoa egiaztatuko dugu."
+      },
+      "pistas": {
+        "es": [
+          "Necesitas touch para la señal y cp para las normas.",
+          "touch refugio/listo.txt\ncp documentos/normas.txt refugio/copias/"
+        ],
+        "eu": [
+          "touch behar duzu seinalerako eta cp arauetarako.",
+          "touch refugio/listo.txt\ncp documentos/normas.txt refugio/copias/"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "vacio",
+          "ruta": "refugio/listo.txt",
+          "error": {
+            "es": "Revisa este objetivo: refugio/listo.txt. Escribe PISTA si necesitas ayuda.",
+            "eu": "Berrikusi helburu hau: refugio/listo.txt. Laguntza behar baduzu, idatzi PISTA."
+          }
+        },
+        {
+          "tipo": "contenido",
+          "ruta": "refugio/copias/normas.txt",
+          "origen": "documentos/normas.txt",
+          "error": {
+            "es": "Revisa este objetivo: refugio/copias/normas.txt. Escribe PISTA si necesitas ayuda.",
+            "eu": "Berrikusi helburu hau: refugio/copias/normas.txt. Laguntza behar baduzu, idatzi PISTA."
+          }
+        },
+        {
+          "tipo": "contenido",
+          "ruta": "documentos/normas.txt",
+          "origen": "documentos/normas.txt",
+          "error": {
+            "es": "Revisa este objetivo: documentos/normas.txt. Escribe PISTA si necesitas ayuda.",
+            "eu": "Berrikusi helburu hau: documentos/normas.txt. Laguntza behar baduzu, idatzi PISTA."
+          }
+        },
+        {
+          "tipo": "contenido",
+          "ruta": "documentos/mapa.txt",
+          "origen": "documentos/mapa.txt",
+          "error": {
+            "es": "Revisa este objetivo: documentos/mapa.txt. Escribe PISTA si necesitas ayuda.",
+            "eu": "Berrikusi helburu hau: documentos/mapa.txt. Laguntza behar baduzu, idatzi PISTA."
+          }
+        },
+        {
+          "tipo": "contenido",
+          "ruta": "refugio/plano.txt",
+          "origen": "documentos/mapa.txt",
+          "error": {
+            "es": "Revisa este objetivo: refugio/plano.txt. Escribe PISTA si necesitas ayuda.",
+            "eu": "Berrikusi helburu hau: refugio/plano.txt. Laguntza behar baduzu, idatzi PISTA."
+          }
+        },
+        {
+          "tipo": "ausente",
+          "ruta": "refugio/copias/mapa.txt",
+          "error": {
+            "es": "Revisa este objetivo: refugio/copias/mapa.txt. Escribe PISTA si necesitas ayuda.",
+            "eu": "Berrikusi helburu hau: refugio/copias/mapa.txt. Laguntza behar baduzu, idatzi PISTA."
+          }
+        },
+        {
+          "tipo": "ausente",
+          "ruta": "refugio/copias/plano.txt",
+          "error": {
+            "es": "Revisa este objetivo: refugio/copias/plano.txt. Escribe PISTA si necesitas ayuda.",
+            "eu": "Berrikusi helburu hau: refugio/copias/plano.txt. Laguntza behar baduzu, idatzi PISTA."
+          }
+        }
+      ]
+    }
+  ],
+  "final": {
+    "es": "¡Actividad completada! Puedes seguir practicando, escribir MENU o REINICIAR para repetirla.",
+    "eu": "Jarduera osatuta! Praktikatzen jarraitu, MENU idatzi edo REINICIAR erabil dezakezu berriro egiteko."
+  }
+}

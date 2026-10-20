@@ -1,0 +1,158 @@
+{
+  "schema": 1,
+  "id": "actividad_001",
+  "version": 1,
+  "titulo": {
+    "es": "Bienvenido a Linux 1 — Tus primeros pasos",
+    "eu": "Ongi etorri Linuxera 1 — Lehen urratsak"
+  },
+  "carpetas": [],
+  "archivos": {
+    "LEEME.txt": {
+      "es": "Bienvenido a Linux. Esta es tu zona de prácticas.\nLa terminal permite trabajar mediante órdenes escritas.\nLa clave de bienvenida es: KAIXO\nEl siguiente mensaje está en mensaje.txt.\n",
+      "eu": "Ongi etorri Linuxera. Hau zure praktika-eremua da.\nTerminalak idatzizko aginduen bidez lan egiteko aukera ematen du.\nOngietorriko gakoa: KAIXO\nHurrengo mezua mensaje.txt fitxategian dago.\n"
+    },
+    "mensaje.txt": {
+      "es": "Has leído tu segundo archivo.\nTu equipo se llama: IZAR\nConserva estos archivos: no necesitas borrarlos.\n",
+      "eu": "Bigarren fitxategia irakurri duzu.\nZure taldearen izena: IZAR\nGorde fitxategi hauek: ez dituzu ezabatu behar.\n"
+    }
+  },
+  "pasos": [
+    {
+      "texto": {
+        "es": "Bienvenido. Aquí usarás una terminal REAL de Linux.\nEscribe cada comando y pulsa Intro. No escribas el símbolo $ del prompt.\n\npwd muestra la ruta completa de la carpeta actual. Ejecuta:\n  pwd\nDespués escribe COMPROBAR y pega o escribe la ruta que te ha mostrado.\nPISTA ofrece ayuda; AYUDA explica el juego.",
+        "eu": "Ongi etorri. Linuxeko BENETAKO terminala erabiliko duzu.\nIdatzi komando bakoitza eta sakatu Sartu. Ez idatzi prompt-eko $ ikurra.\n\npwd komandoak uneko karpetaren bide osoa erakusten du. Exekutatu:\n  pwd\nOndoren, idatzi COMPROBAR eta itsatsi edo idatzi erakutsitako bidea.\nPISTA: laguntza; AYUDA: jokoaren argibideak."
+      },
+      "pistas": {
+        "es": [
+          "El comando es pwd. Su salida empieza por /.",
+          "Ejecuta pwd; después COMPROBAR. Copia la ruta completa, sin añadir comillas."
+        ],
+        "eu": [
+          "Komandoa pwd da. Emaitza / karakterearekin hasten da.",
+          "Exekutatu pwd; ondoren COMPROBAR. Kopiatu bide osoa, komatxorik gabe."
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "respuesta",
+          "pregunta": {
+            "es": "¿Qué ruta completa ha mostrado pwd?",
+            "eu": "Zer bide oso erakutsi du pwd komandoak?"
+          },
+          "respuestas": {
+            "es": [
+              "{escenario}"
+            ],
+            "eu": [
+              "{escenario}"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "texto": {
+        "es": "ls muestra los nombres de los archivos y carpetas. Ejecuta:\n  ls\nLocaliza el archivo cuyo nombre empieza por LEEME.\nEscribe COMPROBAR: te preguntará su nombre completo, incluida la extensión.",
+        "eu": "ls komandoak fitxategien eta karpeten izenak erakusten ditu. Exekutatu:\n  ls\nBilatu LEEME hitzarekin hasten den fitxategia.\nIdatzi COMPROBAR: izen osoa eskatuko dizu, luzapena barne."
+      },
+      "pistas": {
+        "es": [
+          "Mira los nombres que aparecen al ejecutar ls.",
+          "El nombre completo incluye .txt: LEEME.txt."
+        ],
+        "eu": [
+          "Begiratu ls exekutatzean agertzen diren izenak.",
+          "Izen osoak .txt luzapena dauka: LEEME.txt."
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "respuesta",
+          "pregunta": {
+            "es": "Nombre del archivo:",
+            "eu": "Fitxategiaren izena:"
+          },
+          "respuestas": {
+            "es": [
+              "LEEME.txt"
+            ],
+            "eu": [
+              "LEEME.txt"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "texto": {
+        "es": "cat muestra el contenido de un archivo de texto.\nEjecuta:\n  cat LEEME.txt\nLee el mensaje y escribe COMPROBAR. Te pedirá la clave de bienvenida.\nLinux distingue mayúsculas y minúsculas en los nombres de archivo.",
+        "eu": "cat komandoak testu-fitxategi baten edukia erakusten du.\nExekutatu:\n  cat LEEME.txt\nIrakurri mezua eta idatzi COMPROBAR. Ongietorriko gakoa eskatuko dizu.\nLinuxek letra larriak eta xeheak bereizten ditu fitxategi-izenetan."
+      },
+      "pistas": {
+        "es": [
+          "cat necesita el nombre del archivo detrás, separado por un espacio.",
+          "Escribe cat LEEME.txt. Busca la línea de la clave."
+        ],
+        "eu": [
+          "cat komandoaren ondoren fitxategiaren izena jarri behar da, zuriune batez bereizita.",
+          "Idatzi cat LEEME.txt. Bilatu gakoaren lerroa."
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "respuesta",
+          "pregunta": {
+            "es": "Clave de bienvenida:",
+            "eu": "Ongietorriko gakoa:"
+          },
+          "respuestas": {
+            "es": [
+              "KAIXO"
+            ],
+            "eu": [
+              "KAIXO"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "texto": {
+        "es": "Ahora prueba sin copiar el comando completo: lee mensaje.txt.\nUsa el mismo comando de lectura que acabas de aprender.\nDespués escribe COMPROBAR e indica el nombre de tu equipo.",
+        "eu": "Orain saiatu komando osoa kopiatu gabe: irakurri mensaje.txt.\nErabili ikasi berri duzun irakurtzeko komandoa.\nOndoren, idatzi COMPROBAR eta adierazi zure taldearen izena."
+      },
+      "pistas": {
+        "es": [
+          "Ya sabes listar con ls y leer con cat.",
+          "Ejecuta cat mensaje.txt. El equipo aparece dentro."
+        ],
+        "eu": [
+          "Badakizu ls erabiliz zerrendatzen eta cat erabiliz irakurtzen.",
+          "Exekutatu cat mensaje.txt. Taldearen izena barruan dago."
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "respuesta",
+          "pregunta": {
+            "es": "¿Cómo se llama tu equipo?",
+            "eu": "Zein da zure taldearen izena?"
+          },
+          "respuestas": {
+            "es": [
+              "IZAR"
+            ],
+            "eu": [
+              "IZAR"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "final": {
+    "es": "¡Actividad completada! Puedes seguir practicando, escribir MENU o REINICIAR para repetirla.",
+    "eu": "Jarduera osatuta! Praktikatzen jarraitu, MENU idatzi edo REINICIAR erabil dezakezu berriro egiteko."
+  }
+}

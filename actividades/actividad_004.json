@@ -1,0 +1,280 @@
+{
+  "schema": 1,
+  "id": "actividad_004",
+  "version": 1,
+  "titulo": {
+    "es": "Encuentra el virus — Misión de repaso",
+    "eu": "Aurkitu birusa — Berrikusteko misioa"
+  },
+  "carpetas": [],
+  "archivos": {
+    "LEEME.txt": {
+      "es": "ALERTA EN EL CENTRO IZAR\nSe ha detectado un archivo sospechoso en esta zona de entrenamiento.\nTodos los archivos son textos inofensivos: no ejecutes ninguno.\nTu primera pista está en informes/aviso.txt. Léela y averigua el código de incidencia.\n",
+      "eu": "ALARMA IZAR ZENTROAN\nFitxategi susmagarri bat aurkitu da entrenamendu-eremu honetan.\nFitxategi guztiak testu kaltegabeak dira: ez exekutatu bat ere.\nLehen aztarna informes/aviso.txt fitxategian dago. Irakurri eta aurkitu gorabeheraren kodea.\n"
+    },
+    "informes/aviso.txt": {
+      "es": "INCIDENCIA: IZAR-17\nUna copia de seguridad contiene un archivo con una marca extraña.\nInspecciona almacen y busca también lo que no aparece a simple vista.\nConserva este aviso: lo necesitarás como evidencia.\n",
+      "eu": "GORABEHERA: IZAR-17\nBabeskopia batek marka arraroa duen fitxategi bat dauka.\nArakatu almacen eta bilatu begi hutsez ikusten ez dena ere.\nGorde abisu hau: froga gisa beharko duzu.\n"
+    },
+    "almacen/inventario.txt": {
+      "es": "Copia habitual: respaldo.txt.\nHay una nota de mantenimiento que no aparece en el listado normal.\n",
+      "eu": "Ohiko kopia: respaldo.txt.\nMantentze-ohar bat ez da zerrenda arruntean agertzen.\n"
+    },
+    "almacen/.mantenimiento.txt": {
+      "es": "Busca dentro de respaldos.\nEl archivo sospechoso contiene la marca SOMBRA-73.\nNo te fíes de su nombre: compara el contenido de los tres archivos.\n",
+      "eu": "Bilatu respaldos karpetaren barruan.\nFitxategi susmagarriak SOMBRA-73 marka dauka.\nEz fidatu izenaz: alderatu hiru fitxategien edukia.\n"
+    },
+    "almacen/respaldos/respaldo.txt": {
+      "es": "Copia de seguridad revisada. Marca: LIMPIO-01.\n",
+      "eu": "Berrikusitako babeskopia. Marka: LIMPIO-01.\n"
+    },
+    "almacen/respaldos/actualizacion.txt": {
+      "es": "Paquete de entrenamiento. Marca: SOMBRA-73.\nEste texto representa el virus ficticio de la actividad. Es inofensivo.\n",
+      "eu": "Entrenamendu-paketea. Marka: SOMBRA-73.\nTestu honek jarduerako fikziozko birusa irudikatzen du. Kaltegabea da.\n"
+    },
+    "almacen/respaldos/antivirus.txt": {
+      "es": "Informe de revisión. Marca: LIMPIO-02.\n",
+      "eu": "Berrikuspen-txostena. Marka: LIMPIO-02.\n"
+    }
+  },
+  "pasos": [
+    {
+      "texto": {
+        "es": "MISIÓN: ENCUENTRA EL VIRUS\nEmpieza leyendo LEEME.txt y sigue la primera pista.\nCuando encuentres el código de incidencia, escribe COMPROBAR.\nNo se muestran los comandos: usa lo aprendido o pide PISTA.",
+        "eu": "MISIOA: AURKITU BIRUSA\nHasteko, irakurri LEEME.txt eta jarraitu lehen aztarnari.\nGorabeheraren kodea aurkitzean, idatzi COMPROBAR.\nEz dira komandoak erakusten: erabili ikasitakoa edo eskatu PISTA."
+      },
+      "pistas": {
+        "es": [
+          "Necesitas leer dos archivos. Puedes usar sus rutas sin cambiar de carpeta.",
+          "Desde la raíz: cat LEEME.txt y después cat informes/aviso.txt."
+        ],
+        "eu": [
+          "Bi fitxategi irakurri behar dituzu. Haien bideak erabil ditzakezu karpetaz aldatu gabe.",
+          "Errotik: cat LEEME.txt eta ondoren cat informes/aviso.txt."
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "respuesta",
+          "pregunta": {
+            "es": "Código de incidencia:",
+            "eu": "Gorabeheraren kodea:"
+          },
+          "respuestas": {
+            "es": [
+              "IZAR-17"
+            ],
+            "eu": [
+              "IZAR-17"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "texto": {
+        "es": "Investiga almacen. Una nota oculta indica qué marca debes buscar y dónde.\nDespués compara los archivos y descubre cuál contiene esa marca.\nEscribe COMPROBAR cuando conozcas el nombre del archivo sospechoso.\nTodavía no lo muevas.",
+        "eu": "Ikertu almacen. Ezkutuko ohar batek zer marka eta non bilatu adierazten du.\nOndoren, alderatu fitxategiak eta aurkitu marka hori daukana.\nIdatzi COMPROBAR fitxategi susmagarriaren izena jakitean.\nOraindik ez mugitu."
+      },
+      "pistas": {
+        "es": [
+          "Recuerda ls -a. Identifica el archivo por su contenido, no por su nombre.",
+          "Desde la raíz: ls -a almacen; cat almacen/.mantenimiento.txt. Lee con cat cada archivo de almacen/respaldos."
+        ],
+        "eu": [
+          "Gogoratu ls -a. Identifikatu fitxategia edukiaren arabera, ez izenaren arabera.",
+          "Errotik: ls -a almacen; cat almacen/.mantenimiento.txt. Irakurri almacen/respaldos barruko fitxategi bakoitza cat erabiliz."
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "respuesta",
+          "pregunta": {
+            "es": "Nombre completo del archivo sospechoso (sin carpetas):",
+            "eu": "Fitxategi susmagarriaren izen osoa (karpetarik gabe):"
+          },
+          "respuestas": {
+            "es": [
+              "actualizacion.txt"
+            ],
+            "eu": [
+              "actualizacion.txt"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "texto": {
+        "es": "Antes de aislarlo, conserva las pruebas.\nEn la raíz del escenario crea una carpeta evidencias y copia allí informes/aviso.txt.\nEl aviso original debe permanecer intacto. Escribe COMPROBAR.",
+        "eu": "Isolatu aurretik, gorde frogak.\nEszenatokiaren erroan sortu evidencias karpeta eta kopiatu hara informes/aviso.txt.\nJatorrizko abisua bere horretan mantendu behar da. Idatzi COMPROBAR."
+      },
+      "pistas": {
+        "es": [
+          "Para conservar un original necesitas copiar, no mover.",
+          "Desde la raíz: mkdir evidencias y cp informes/aviso.txt evidencias/"
+        ],
+        "eu": [
+          "Jatorrizkoa mantentzeko kopiatu egin behar duzu, ez mugitu.",
+          "Errotik: mkdir evidencias eta cp informes/aviso.txt evidencias/"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "contenido",
+          "ruta": "evidencias/aviso.txt",
+          "origen": "informes/aviso.txt",
+          "error": {
+            "es": "Revisa este objetivo: evidencias/aviso.txt. Escribe PISTA si necesitas ayuda.",
+            "eu": "Berrikusi helburu hau: evidencias/aviso.txt. Laguntza behar baduzu, idatzi PISTA."
+          }
+        },
+        {
+          "tipo": "contenido",
+          "ruta": "informes/aviso.txt",
+          "origen": "informes/aviso.txt",
+          "error": {
+            "es": "Revisa este objetivo: informes/aviso.txt. Escribe PISTA si necesitas ayuda.",
+            "eu": "Berrikusi helburu hau: informes/aviso.txt. Laguntza behar baduzu, idatzi PISTA."
+          }
+        }
+      ]
+    },
+    {
+      "texto": {
+        "es": "Aísla el archivo identificado: crea cuarentena en la raíz y muévelo allí con el nombre sospechoso.txt.\nNo borres ni modifiques los otros archivos de respaldos.\nEscribe COMPROBAR.",
+        "eu": "Isolatu identifikatutako fitxategia: sortu cuarentena erroan eta mugitu fitxategia hara sospechoso.txt izenarekin.\nEz ezabatu edo aldatu respaldos karpetako beste fitxategiak.\nIdatzi COMPROBAR."
+      },
+      "pistas": {
+        "es": [
+          "mv puede mover y renombrar en una sola orden.",
+          "Desde la raíz: mkdir cuarentena\nmv almacen/respaldos/actualizacion.txt cuarentena/sospechoso.txt"
+        ],
+        "eu": [
+          "mv komandoak aldi berean mugitu eta izena alda dezake.",
+          "Errotik: mkdir cuarentena\nmv almacen/respaldos/actualizacion.txt cuarentena/sospechoso.txt"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "contenido",
+          "ruta": "cuarentena/sospechoso.txt",
+          "origen": "almacen/respaldos/actualizacion.txt",
+          "error": {
+            "es": "Revisa este objetivo: cuarentena/sospechoso.txt. Escribe PISTA si necesitas ayuda.",
+            "eu": "Berrikusi helburu hau: cuarentena/sospechoso.txt. Laguntza behar baduzu, idatzi PISTA."
+          }
+        },
+        {
+          "tipo": "ausente",
+          "ruta": "almacen/respaldos/actualizacion.txt",
+          "error": {
+            "es": "Revisa este objetivo: almacen/respaldos/actualizacion.txt. Escribe PISTA si necesitas ayuda.",
+            "eu": "Berrikusi helburu hau: almacen/respaldos/actualizacion.txt. Laguntza behar baduzu, idatzi PISTA."
+          }
+        },
+        {
+          "tipo": "contenido",
+          "ruta": "almacen/respaldos/respaldo.txt",
+          "origen": "almacen/respaldos/respaldo.txt",
+          "error": {
+            "es": "Revisa este objetivo: almacen/respaldos/respaldo.txt. Escribe PISTA si necesitas ayuda.",
+            "eu": "Berrikusi helburu hau: almacen/respaldos/respaldo.txt. Laguntza behar baduzu, idatzi PISTA."
+          }
+        },
+        {
+          "tipo": "contenido",
+          "ruta": "almacen/respaldos/antivirus.txt",
+          "origen": "almacen/respaldos/antivirus.txt",
+          "error": {
+            "es": "Revisa este objetivo: almacen/respaldos/antivirus.txt. Escribe PISTA si necesitas ayuda.",
+            "eu": "Berrikusi helburu hau: almacen/respaldos/antivirus.txt. Laguntza behar baduzu, idatzi PISTA."
+          }
+        }
+      ]
+    },
+    {
+      "texto": {
+        "es": "Cierra la incidencia: crea el archivo vacío resuelto.txt dentro de evidencias.\nEscribe COMPROBAR para revisar el resultado completo.\nEsta cuarentena es una metáfora del juego: mover un archivo no desinfecta un sistema real.",
+        "eu": "Itxi gorabehera: sortu resuelto.txt fitxategi hutsa evidencias karpetan.\nIdatzi COMPROBAR emaitza osoa egiaztatzeko.\nKoarentena hau jokoaren metafora da: fitxategi bat mugitzeak ez du benetako sistema bat desinfektatzen."
+      },
+      "pistas": {
+        "es": [
+          "Usa el comando que crea archivos vacíos.",
+          "Desde la raíz: touch evidencias/resuelto.txt"
+        ],
+        "eu": [
+          "Erabili fitxategi hutsak sortzen dituen komandoa.",
+          "Errotik: touch evidencias/resuelto.txt"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "vacio",
+          "ruta": "evidencias/resuelto.txt",
+          "error": {
+            "es": "Revisa este objetivo: evidencias/resuelto.txt. Escribe PISTA si necesitas ayuda.",
+            "eu": "Berrikusi helburu hau: evidencias/resuelto.txt. Laguntza behar baduzu, idatzi PISTA."
+          }
+        },
+        {
+          "tipo": "contenido",
+          "ruta": "evidencias/aviso.txt",
+          "origen": "informes/aviso.txt",
+          "error": {
+            "es": "Revisa este objetivo: evidencias/aviso.txt. Escribe PISTA si necesitas ayuda.",
+            "eu": "Berrikusi helburu hau: evidencias/aviso.txt. Laguntza behar baduzu, idatzi PISTA."
+          }
+        },
+        {
+          "tipo": "contenido",
+          "ruta": "informes/aviso.txt",
+          "origen": "informes/aviso.txt",
+          "error": {
+            "es": "Revisa este objetivo: informes/aviso.txt. Escribe PISTA si necesitas ayuda.",
+            "eu": "Berrikusi helburu hau: informes/aviso.txt. Laguntza behar baduzu, idatzi PISTA."
+          }
+        },
+        {
+          "tipo": "contenido",
+          "ruta": "cuarentena/sospechoso.txt",
+          "origen": "almacen/respaldos/actualizacion.txt",
+          "error": {
+            "es": "Revisa este objetivo: cuarentena/sospechoso.txt. Escribe PISTA si necesitas ayuda.",
+            "eu": "Berrikusi helburu hau: cuarentena/sospechoso.txt. Laguntza behar baduzu, idatzi PISTA."
+          }
+        },
+        {
+          "tipo": "ausente",
+          "ruta": "almacen/respaldos/actualizacion.txt",
+          "error": {
+            "es": "Revisa este objetivo: almacen/respaldos/actualizacion.txt. Escribe PISTA si necesitas ayuda.",
+            "eu": "Berrikusi helburu hau: almacen/respaldos/actualizacion.txt. Laguntza behar baduzu, idatzi PISTA."
+          }
+        },
+        {
+          "tipo": "contenido",
+          "ruta": "almacen/respaldos/respaldo.txt",
+          "origen": "almacen/respaldos/respaldo.txt",
+          "error": {
+            "es": "Revisa este objetivo: almacen/respaldos/respaldo.txt. Escribe PISTA si necesitas ayuda.",
+            "eu": "Berrikusi helburu hau: almacen/respaldos/respaldo.txt. Laguntza behar baduzu, idatzi PISTA."
+          }
+        },
+        {
+          "tipo": "contenido",
+          "ruta": "almacen/respaldos/antivirus.txt",
+          "origen": "almacen/respaldos/antivirus.txt",
+          "error": {
+            "es": "Revisa este objetivo: almacen/respaldos/antivirus.txt. Escribe PISTA si necesitas ayuda.",
+            "eu": "Berrikusi helburu hau: almacen/respaldos/antivirus.txt. Laguntza behar baduzu, idatzi PISTA."
+          }
+        }
+      ]
+    }
+  ],
+  "final": {
+    "es": "¡Actividad completada! Puedes seguir practicando, escribir MENU o REINICIAR para repetirla.",
+    "eu": "Jarduera osatuta! Praktikatzen jarraitu, MENU idatzi edo REINICIAR erabil dezakezu berriro egiteko."
+  }
+}
