@@ -101,9 +101,9 @@ Cuando esté publicado, sustituye los marcadores en estas órdenes:
 
 ```bash
 cd ~
-wget -O linuxaventura-main.tar.gz https://github.com/USUARIO/REPOSITORIO/archive/refs/heads/main.tar.gz
-tar -xzf linuxaventura-main.tar.gz
-mv REPOSITORIO-main linuxaventura
+wget -O linuxaventura.tar.gz https://github.com/jmalvido/linuxaventura/archive/refs/heads/main.tar.gz
+tar -xzf linuxaventura.tar.gz
+mv linuxaventura-main linuxaventura
 bash ~/linuxaventura/jugar.sh
 ```
 
