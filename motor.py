@@ -9,6 +9,7 @@ import shutil
 import sys
 import tempfile
 import urllib.request
+import interfaz as ui
 
 ROOT = Path(__file__).resolve().parent
 DATA = ROOT / 'datos'
@@ -112,22 +113,24 @@ def start(a):
     write(d/'estado.json',{'paso':0,'pistas':{},'idioma_escenario':language,'cwd':'.'})
     return load(a['id'])
 
-def show(aid):
+def show(aid, fresh=False, notice=None):
     a,s,w=load(aid)
-    print('\n'+loc(a['titulo']))
-    print(tr('Raíz del escenario: ','Eszenatokiaren erroa: ')+str(w))
+    if fresh: ui.clear()
+    if notice: print(ui.color(notice, "success"))
+    print('\n'+ui.color(loc(a['titulo']), 'title'))
+    print(ui.color(tr('Raíz del escenario: ','Eszenatokiaren erroa: ')+str(w), 'muted'))
     if s['paso']>=len(a['pasos']):
-        print(loc(a['final']))
-        print(tr('Actividad completada. MENU para volver.','Jarduera osatuta. MENU itzultzeko.'))
+        print(ui.highlight(loc(a['final'])))
+        print(ui.color(tr('Actividad completada. MENU para volver.','Jarduera osatuta. MENU itzultzeko.'), 'success'))
         return
-    print(tr('Paso','Urratsa'),f"{s['paso']+1}/{len(a['pasos'])}")
-    print(loc(a['pasos'][s['paso']]['texto']).replace('{escenario}',str(w)))
-    print('\nPISTA · COMPROBAR · AYUDA · REINICIAR · MENU')
+    print(ui.color(tr('Paso','Urratsa')+f" {s['paso']+1}/{len(a['pasos'])}", "title"))
+    print(ui.highlight(loc(a['pasos'][s['paso']]['texto']).replace('{escenario}',str(w))))
+    print('\n'+ui.highlight('PISTA · COMPROBAR · AYUDA · REINICIAR · MENU'))
 
 def check_test(test,a,s,w,answer=input):
     kind=test['tipo']
     if kind=='respuesta':
-        value=answer(loc(test['pregunta'])+' ').strip().casefold()
+        value=answer(ui.color(loc(test['pregunta']), 'command')+' ').strip().casefold()
         acceptable=loc(test['respuestas'],s['idioma_escenario'])
         return value in [x.replace('{escenario}',str(w)).casefold() for x in acceptable]
     p=safe(w,test['ruta'])
@@ -146,18 +149,17 @@ def check(aid):
     step=a['pasos'][s['paso']]
     for test in step['pruebas']:
         if not check_test(test,a,s,w):
-            print(loc(test.get('error',{'es':'Todavía no está resuelto. Revisa el objetivo o escribe PISTA.','eu':'Oraindik ez dago ebatzita. Berrikusi helburua edo idatzi PISTA.'})))
+            print(ui.color(loc(test.get('error',{'es':'Todavía no está resuelto. Revisa el objetivo o escribe PISTA.','eu':'Oraindik ez dago ebatzita. Berrikusi helburua edo idatzi PISTA.'})), 'error'))
             return
     s['paso']+=1; write(folder(aid)/'estado.json',s)
-    print(tr('¡Correcto! Progreso guardado.','Zuzen! Aurrerapena gordeta.'))
-    show(aid)
+    show(aid, fresh=True, notice=tr('¡Correcto! Progreso guardado.','Zuzen! Aurrerapena gordeta.'))
 
 def hint(aid):
     a,s,w=load(aid)
     if s['paso']>=len(a['pasos']): show(aid); return
     hints=loc(a['pasos'][s['paso']]['pistas'])
     key=str(s['paso']); n=min(s['pistas'].get(key,0),len(hints)-1)
-    print(f'PISTA {n+1}/{len(hints)}: '+hints[n].replace('{escenario}',str(w)))
+    print(ui.color(f'PISTA {n+1}/{len(hints)}: ', 'hint')+ui.highlight(hints[n].replace('{escenario}',str(w))))
     s['pistas'][key]=n+1; write(folder(aid)/'estado.json',s)
 
 def reset(aid):
@@ -171,7 +173,7 @@ def reset(aid):
     if w.is_symlink(): raise ValueError('Escenario enlazado: reinicio rechazado.')
     if w.exists(): shutil.rmtree(w)
     (folder(aid)/'estado.json').unlink()
-    start(replacement); show(aid)
+    start(replacement); show(aid, fresh=True)
 
 def remember(aid, cwd):
     a,s,w=load(aid)
@@ -187,7 +189,7 @@ def cwd(aid):
 
 def help_text():
     if lang()=='es':
-        print('''CÓMO SE JUEGA
+        print(ui.highlight('''CÓMO SE JUEGA
 Lee el objetivo, usa comandos reales de Linux y escribe COMPROBAR.
 PISTA       Ayuda progresiva para el paso actual.
 COMPROBAR   Verifica archivos o te pregunta lo que has descubierto.
@@ -203,9 +205,9 @@ Estás en Bash real: cd, tuberías, redirecciones y scripts funcionan.
 No necesitas sudo. Trabaja dentro de la carpeta del escenario.
 El juego NO aísla la máquina: los comandos actúan con tus permisos.
 Los pasos superados se guardan automáticamente; guarda tus scripts en el editor.
-Ctrl+C cancela un comando. Ctrl+D vuelve al menú.\n''')
+Ctrl+C cancela un comando. Ctrl+D vuelve al menú.\n'''))
     else:
-        print('''NOLA JOKATU
+        print(ui.highlight('''NOLA JOKATU
 Irakurri helburua, erabili Linuxeko benetako komandoak eta idatzi COMPROBAR.
 PISTA       Uneko urratserako laguntza mailakatua.
 COMPROBAR   Fitxategiak egiaztatu edo aurkitutakoari buruz galdetu.
@@ -221,7 +223,7 @@ Benetako Bash erabiltzen ari zara: cd, hodiak, birbideratzeak eta scriptak dabil
 Ez duzu sudo behar. Lan egin eszenatokiaren karpetan.
 Jokoak EZ du makina isolatzen: komandoek zure baimenekin jarduten dute.
 Gainditutako urratsak automatikoki gordetzen dira; gorde scriptak editorean.
-Ctrl+C: komandoa eten. Ctrl+D: menura itzuli.\n''')
+Ctrl+C: komandoa eten. Ctrl+D: menura itzuli.\n'''))
 
 def fetch(url):
     if not url.startswith('https://raw.githubusercontent.com/'):
@@ -263,9 +265,9 @@ def main():
     action=sys.argv[1]; aid=os.environ.get('LA_ID')
     if action=='check': check(aid)
     elif action=='hint': hint(aid)
-    elif action=='show': show(aid)
+    elif action=='show': show(aid, fresh=True)
     elif action=='reset': reset(aid)
-    elif action=='help': help_text(); show(aid)
+    elif action=='help': ui.clear(); help_text(); show(aid)
     elif action=='update': update()
     elif action=='remember': remember(aid,sys.argv[2])
     elif action=='path': print(cwd(aid))

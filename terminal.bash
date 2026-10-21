@@ -19,6 +19,10 @@ HISTFILE="$LA_HISTORY"
 HISTSIZE=2000
 HISTFILESIZE=4000
 shopt -s histappend
-PS1='[LinuxAventura \W] \$ '
+if [[ -t 1 && ${TERM:-dumb} != dumb && ! ${NO_COLOR+x} ]]; then
+    PS1='\[\e[1;36m\][LinuxAventura\[\e[0m\] \[\e[1;34m\]\W\[\e[0m\]\[\e[1;36m\]]\[\e[0m\] \[\e[1;32m\]\$\[\e[0m\] '
+else
+    PS1='[LinuxAventura \W] \$ '
+fi
 unset BASH_ENV ENV
 "$LA_PYTHON" "$LA_ROOT/motor.py" show
