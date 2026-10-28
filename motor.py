@@ -52,6 +52,7 @@ def validate(a):
     assert re.fullmatch(r'actividad_[0-9]{3,}', a['id']), 'ID inválido'
     assert isinstance(a['version'], int) and a['version'] > 0
     assert a['schema'] == 1
+    assert a.get('motor_minimo', 1) <= 3, 'Actualiza el motor del juego'
     for k in ('titulo','final'):
         assert all(isinstance(a[k][l], str) for l in ('es','eu'))
     assert isinstance(a['pasos'], list) and a['pasos']
@@ -65,10 +66,24 @@ def validate(a):
             assert isinstance(step['pistas'][l],list) and step['pistas'][l]
         assert step['pruebas']
         for test in step['pruebas']:
-            assert test['tipo'] in ('respuesta','carpeta','contenido','ausente','vacio')
+            assert test['tipo'] in ('respuesta','carpeta','contenido','ausente','vacio','respuesta_sistema','salida','alias','sin_alias','ejecutado','historial_limpio','reentrada')
             if test['tipo']=='respuesta':
                 assert all(isinstance(test['pregunta'][l],str) for l in ('es','eu'))
                 assert all(isinstance(test['respuestas'][l],list) and test['respuestas'][l] for l in ('es','eu'))
+            elif test['tipo'] in ('respuesta_sistema','salida'):
+                from retos import QUERIES
+                assert test['consulta'] in QUERIES
+                if test['tipo']=='salida': safe(Path('/tmp/escenario-validacion'),test['ruta'])
+                else: assert all(isinstance(test['pregunta'][l],str) for l in ('es','eu'))
+            elif test['tipo']=='alias':
+                assert re.fullmatch(r'[a-z][a-z0-9_]*',test['nombre'])
+                assert test['valores'] and all(isinstance(v,str) for v in test['valores'])
+            elif test['tipo']=='sin_alias':
+                assert isinstance(test['nombre'],str)
+            elif test['tipo']=='ejecutado':
+                assert test['comandos'] and all(isinstance(v,str) for v in test['comandos'])
+            elif test['tipo'] in ('historial_limpio','reentrada'):
+                pass
             else:
                 safe(Path('/tmp/escenario-validacion'), test['ruta'])
                 if test['tipo']=='contenido':
@@ -129,6 +144,9 @@ def show(aid, fresh=False, notice=None):
 
 def check_test(test,a,s,w,answer=input):
     kind=test['tipo']
+    if kind not in ('respuesta','carpeta','contenido','ausente','vacio'):
+        from retos import check as check_unit
+        return check_unit(test,a,s,w,answer,loc,safe)
     if kind=='respuesta':
         value=answer(ui.color(loc(test['pregunta']), 'command')+' ').strip().casefold()
         acceptable=loc(test['respuestas'],s['idioma_escenario'])
@@ -151,7 +169,9 @@ def check(aid):
         if not check_test(test,a,s,w):
             print(ui.color(loc(test.get('error',{'es':'Todavía no está resuelto. Revisa el objetivo o escribe PISTA.','eu':'Oraindik ez dago ebatzita. Berrikusi helburua edo idatzi PISTA.'})), 'error'))
             return
-    s['paso']+=1; write(folder(aid)/'estado.json',s)
+    s['paso']+=1
+    s['sesion_paso']=os.environ.get('LA_SESSION_ID','')
+    write(folder(aid)/'estado.json',s)
     show(aid, fresh=True, notice=tr('¡Correcto! Progreso guardado.','Zuzen! Aurrerapena gordeta.'))
 
 def hint(aid):
@@ -173,6 +193,8 @@ def reset(aid):
     if w.is_symlink(): raise ValueError('Escenario enlazado: reinicio rechazado.')
     if w.exists(): shutil.rmtree(w)
     (folder(aid)/'estado.json').unlink()
+    for name in ('alias_guardados.sh','alias_comprobacion.txt','historial_comprobacion.txt'):
+        (folder(aid)/name).unlink(missing_ok=True)
     start(replacement); show(aid, fresh=True)
 
 def remember(aid, cwd):

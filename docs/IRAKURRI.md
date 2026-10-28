@@ -49,3 +49,22 @@ mantentzen dute REINICIAR egin arte. Konexiorik gabe ere joka daiteke.
 Jokoak ez du makina isolatzen: lan egin eszenatokiaren barruan eta erabili zure VM.
 GitHub biltegia konfiguratzeko eta jarduerak gehitzeko, ikusi README.md eta
 CREAR_ACTIVIDADES.md. Uneko bertsioa Linuxerako da, ez Windows natiborako.
+
+
+## Unitateko hedapena (0.3)
+
+Orain 10 joko eta definizioen jarduera gehigarri bat daude:
+
+5. Galdutako agenda: data eta egutegia.
+6. Nor dago agintean?: erabiltzaileak eta sistema.
+7. Terminalaren liburutegia: man, info, whereis, Tab eta prompt-a.
+8. Txandarako lasterbideak: aliasak sortu, probatu eta kendu.
+9. Operadorearen erreleboa: historia, pasahitzen komandoa eta saiotik irten.
+10. IZAR operazioa: unitateko azken misioa, 12 urratsekin.
+11. Gehigarria: 27 definizio, komandoarekin erantzuteko.
+
+Tresnak instalatzeko: `sudo apt install python3 wget ncal man-db info`.
+Idatzi agindu bakoitza lerro bereizi batean. Aliasak eta historia jardueraka gordetzen dira;
+REINICIAR aukerak jarduera horretakoak garbitzen ditu. Pasahitz errealak ez dira aldatzen.
+Azken misioan > erabiltzen ikasiko duzu, irteera fitxategi batean gordetzeko.
+Bertsio hau instalatzeko erabili eguneratzeko scripta; ACTUALIZAR aukerak ez du motorra eguneratzen.

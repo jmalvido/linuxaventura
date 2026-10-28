@@ -1,0 +1,227 @@
+{
+  "schema": 1,
+  "motor_minimo": 3,
+  "id": "actividad_008",
+  "version": 1,
+  "titulo": {
+    "es": "Atajos para el turno — Alias",
+    "eu": "Txandarako lasterbideak — Aliasak"
+  },
+  "requisitos": [
+    "cal"
+  ],
+  "carpetas": [],
+  "archivos": {
+    "LEEME.txt": {
+      "es": "Tu equipo repite varias consultas. Crea atajos de terminal, pruébalos y retira los que ya no se necesiten. Escribe cada alias y su prueba en líneas separadas.\n",
+      "eu": "Zure taldeak hainbat kontsulta errepikatzen ditu. Sortu terminaleko lasterbideak, probatu eta kendu behar ez direnak. Idatzi alias bakoitza eta haren proba lerro bereizietan.\n"
+    }
+  },
+  "pasos": [
+    {
+      "texto": {
+        "es": "Lee LEEME.txt. Crea un alias llamado quien que limpie la pantalla, muestre tu usuario y después la fecha. Para encadenar órdenes usa ; dentro de comillas. Ejemplo: alias nombre='orden1; orden2'. Ejecuta quien en otra línea y COMPROBAR.",
+        "eu": "Irakurri LEEME.txt. Sortu quien aliasa: pantaila garbitu, erabiltzailea erakutsi eta ondoren data. Aginduak lotzeko, erabili ; komatxo barruan. Adibidea: alias izena='agindua1; agindua2'. Exekutatu quien beste lerro batean eta COMPROBAR."
+      },
+      "pistas": {
+        "es": [
+          "Necesitas clear, whoami y date, en ese orden.",
+          "alias quien='clear; whoami; date'\nquien\nCOMPROBAR"
+        ],
+        "eu": [
+          "clear, whoami eta date behar dituzu, ordena horretan.",
+          "alias quien='clear; whoami; date'\nquien\nCOMPROBAR"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "alias",
+          "nombre": "quien",
+          "valores": [
+            "clear; whoami; date",
+            "clear && whoami && date"
+          ]
+        },
+        {
+          "tipo": "ejecutado",
+          "comandos": [
+            "quien"
+          ]
+        }
+      ]
+    },
+    {
+      "texto": {
+        "es": "Crea meses: debe limpiar la pantalla, mostrar el mes anterior, el actual y el siguiente, y terminar mostrando tu usuario. Ejecútalo y comprueba.",
+        "eu": "Sortu meses: pantaila garbitu, aurreko hilabetea, oraingoa eta hurrengoa erakutsi, eta amaieran zure erabiltzailea erakutsi. Exekutatu eta egiaztatu."
+      },
+      "pistas": {
+        "es": [
+          "Usa cal con la opción de tres meses.",
+          "alias meses='clear; cal -3; whoami'\nmeses\nCOMPROBAR"
+        ],
+        "eu": [
+          "Erabili cal hiru hilabete erakusteko aukerarekin.",
+          "alias meses='clear; cal -3; whoami'\nmeses\nCOMPROBAR"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "alias",
+          "nombre": "meses",
+          "valores": [
+            "clear; cal -3; whoami",
+            "clear && cal -3 && whoami"
+          ]
+        },
+        {
+          "tipo": "ejecutado",
+          "comandos": [
+            "meses"
+          ]
+        }
+      ]
+    },
+    {
+      "texto": {
+        "es": "Crea conectados: limpia la pantalla, muestra la fecha y luego las sesiones registradas. Ejecútalo aunque who no muestre ninguna sesión. COMPROBAR.",
+        "eu": "Sortu conectados: garbitu pantaila, erakutsi data eta ondoren erregistratutako saioak. Exekutatu, nahiz eta who komandoak saiorik ez erakutsi. COMPROBAR."
+      },
+      "pistas": {
+        "es": [
+          "Aquí necesitas who, no whoami.",
+          "alias conectados='clear; date; who'\nconectados\nCOMPROBAR"
+        ],
+        "eu": [
+          "Hemen who behar duzu, ez whoami.",
+          "alias conectados='clear; date; who'\nconectados\nCOMPROBAR"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "alias",
+          "nombre": "conectados",
+          "valores": [
+            "clear; date; who",
+            "clear && date && who"
+          ]
+        },
+        {
+          "tipo": "ejecutado",
+          "comandos": [
+            "conectados"
+          ]
+        }
+      ]
+    },
+    {
+      "texto": {
+        "es": "Crea equipo para mostrar el sistema operativo y después el nombre del equipo. Ejecuta equipo y lista todos los alias con alias. Comprueba que siguen definidos los cuatro atajos.",
+        "eu": "Sortu equipo sistema eragilea eta ondoren ekipoaren izena erakusteko. Exekutatu equipo eta zerrendatu alias guztiak alias erabiliz. Egiaztatu lau lasterbideak definituta daudela."
+      },
+      "pistas": {
+        "es": [
+          "uname dispone de opciones diferentes para sistema operativo y nombre de equipo.",
+          "alias equipo='uname -o; uname -n'\nequipo\nalias\nCOMPROBAR"
+        ],
+        "eu": [
+          "uname komandoak aukera desberdinak ditu sistema eragilerako eta ekipoaren izenerako.",
+          "alias equipo='uname -o; uname -n'\nequipo\nalias\nCOMPROBAR"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "alias",
+          "nombre": "equipo",
+          "valores": [
+            "uname -o; uname -n",
+            "uname -o && uname -n"
+          ]
+        },
+        {
+          "tipo": "alias",
+          "nombre": "quien",
+          "valores": [
+            "clear; whoami; date",
+            "clear && whoami && date"
+          ]
+        },
+        {
+          "tipo": "alias",
+          "nombre": "meses",
+          "valores": [
+            "clear; cal -3; whoami",
+            "clear && cal -3 && whoami"
+          ]
+        },
+        {
+          "tipo": "alias",
+          "nombre": "conectados",
+          "valores": [
+            "clear; date; who",
+            "clear && date && who"
+          ]
+        },
+        {
+          "tipo": "ejecutado",
+          "comandos": [
+            "equipo"
+          ]
+        },
+        {
+          "tipo": "ejecutado",
+          "comandos": [
+            "alias",
+            "alias -p"
+          ]
+        }
+      ]
+    },
+    {
+      "texto": {
+        "es": "El turno termina: elimina meses y conectados con unalias. Conserva quien y equipo. Lista los alias y escribe COMPROBAR.",
+        "eu": "Txanda amaitu da: kendu meses eta conectados unalias erabiliz. Mantendu quien eta equipo. Zerrendatu aliasak eta idatzi COMPROBAR."
+      },
+      "pistas": {
+        "es": [
+          "unalias admite uno o varios nombres; no uses -a porque debes conservar dos.",
+          "unalias meses conectados\nalias\nCOMPROBAR"
+        ],
+        "eu": [
+          "unalias komandoak izen bat edo gehiago onartzen ditu; ez erabili -a, bi mantendu behar dituzulako.",
+          "unalias meses conectados\nalias\nCOMPROBAR"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "sin_alias",
+          "nombre": "meses"
+        },
+        {
+          "tipo": "sin_alias",
+          "nombre": "conectados"
+        },
+        {
+          "tipo": "alias",
+          "nombre": "quien",
+          "valores": [
+            "clear; whoami; date",
+            "clear && whoami && date"
+          ]
+        },
+        {
+          "tipo": "alias",
+          "nombre": "equipo",
+          "valores": [
+            "uname -o; uname -n",
+            "uname -o && uname -n"
+          ]
+        }
+      ]
+    }
+  ],
+  "final": {
+    "es": "¡Misión completada! Puedes seguir practicando o escribir MENU.",
+    "eu": "Misioa osatuta! Praktikatzen jarraitu edo MENU idatzi dezakezu."
+  }
+}

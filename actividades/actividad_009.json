@@ -1,0 +1,149 @@
+{
+  "schema": 1,
+  "motor_minimo": 3,
+  "id": "actividad_009",
+  "version": 1,
+  "titulo": {
+    "es": "El relevo del operador — Historial y sesión",
+    "eu": "Operadorearen erreleboa — Historia eta saioa"
+  },
+  "requisitos": [
+    "man"
+  ],
+  "carpetas": [],
+  "archivos": {
+    "LEEME.txt": {
+      "es": "Antes del relevo, revisa tus órdenes y aprende a cerrar la sesión. Este juego usa su propio historial; no se borra el historial habitual de tu cuenta.\n",
+      "eu": "Erreleboaren aurretik, berrikusi aginduak eta ikasi saiotik irteten. Jokoak bere historia erabiltzen du; ez da zure kontuaren ohiko historia ezabatzen.\n"
+    }
+  },
+  "pasos": [
+    {
+      "texto": {
+        "es": "Lee LEEME.txt. Ejecuta date, whoami y uname -n. Usa la flecha arriba para recuperar una orden y ejecutarla otra vez. Muestra el historial con history. COMPROBAR verificará las consultas; las teclas no se registran.",
+        "eu": "Irakurri LEEME.txt. Exekutatu date, whoami eta uname -n. Erabili gorako gezia agindu bat berreskuratu eta berriro exekutatzeko. Erakutsi historia history erabiliz. COMPROBAR aukerak kontsultak egiaztatuko ditu; teklak ez dira erregistratzen."
+      },
+      "pistas": {
+        "es": [
+          "history muestra las órdenes de esta actividad con sus números.",
+          "date\nwhoami\nuname -n\nhistory\nCOMPROBAR"
+        ],
+        "eu": [
+          "history komandoak jarduerako aginduak eta haien zenbakiak erakusten ditu.",
+          "date\nwhoami\nuname -n\nhistory\nCOMPROBAR"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "ejecutado",
+          "comandos": [
+            "date"
+          ]
+        },
+        {
+          "tipo": "ejecutado",
+          "comandos": [
+            "whoami"
+          ]
+        },
+        {
+          "tipo": "ejecutado",
+          "comandos": [
+            "uname -n"
+          ]
+        },
+        {
+          "tipo": "ejecutado",
+          "comandos": [
+            "history"
+          ]
+        }
+      ]
+    },
+    {
+      "texto": {
+        "es": "Investiga la orden que cambia la contraseña del usuario actual consultando man passwd. No la ejecutes: basta con identificarla. COMPROBAR pedirá su nombre. Al introducir contraseñas en una terminal normalmente no aparecen caracteres.",
+        "eu": "Ikertu uneko erabiltzailearen pasahitza aldatzeko agindua man passwd kontsultatuz. Ez exekutatu: identifikatzea nahikoa da. COMPROBAR aukerak izena eskatuko du. Terminalean pasahitza idaztean normalean ez da karaktererik agertzen."
+      },
+      "pistas": {
+        "es": [
+          "No necesitas sudo ni cambiar una contraseña para superar esta etapa.",
+          "man passwd\nCOMPROBAR → passwd"
+        ],
+        "eu": [
+          "Ez duzu sudo erabili edo pasahitza aldatu behar urrats hau gainditzeko.",
+          "man passwd\nCOMPROBAR → passwd"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "ejecutado",
+          "comandos": [
+            "man passwd"
+          ]
+        },
+        {
+          "tipo": "respuesta",
+          "pregunta": {
+            "es": "Comando para cambiar tu contraseña:",
+            "eu": "Zure pasahitza aldatzeko komandoa:"
+          },
+          "respuestas": {
+            "es": [
+              "passwd"
+            ],
+            "eu": [
+              "passwd"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "texto": {
+        "es": "Limpia la lista de comandos de ESTA actividad con history -c. Después ejecuta history y COMPROBAR, sin otras órdenes intermedias. Es normal que history y COMPROBAR aparezcan: son órdenes nuevas.",
+        "eu": "Garbitu jarduera HONETAKO aginduen zerrenda history -c erabiliz. Ondoren, exekutatu history eta COMPROBAR, tarteko beste agindurik gabe. Normala da history eta COMPROBAR agertzea: agindu berriak dira."
+      },
+      "pistas": {
+        "es": [
+          "Si has pedido PISTA después de limpiar, vuelve a limpiar antes de comprobar.",
+          "history -c\nhistory\nCOMPROBAR"
+        ],
+        "eu": [
+          "Garbitu ondoren PISTA eskatu baduzu, garbitu berriro egiaztatu aurretik.",
+          "history -c\nhistory\nCOMPROBAR"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "historial_limpio"
+        }
+      ]
+    },
+    {
+      "texto": {
+        "es": "Última prueba: escribe exit para salir de la terminal de la actividad. Volverás al menú del juego. Selecciona otra vez esta actividad y escribe COMPROBAR. Debes retomar este mismo paso; no uses REINICIAR.",
+        "eu": "Azken proba: idatzi exit jardueraren terminaletik irteteko. Jokoaren menura itzuliko zara. Hautatu berriro jarduera hau eta idatzi COMPROBAR. Urrats honetan jarraitu behar duzu; ez erabili REINICIAR."
+      },
+      "pistas": {
+        "es": [
+          "Aquí exit cierra el Bash de la actividad; SALIR cerraría el juego completo.",
+          "exit\nMENU: 9\nCOMPROBAR"
+        ],
+        "eu": [
+          "Hemen exit komandoak jardueraren Bash ixten du; SALIR aukerak joko osoa itxiko luke.",
+          "exit\nMENU: 9\nCOMPROBAR"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "reentrada"
+        }
+      ]
+    }
+  ],
+  "final": {
+    "es": "¡Misión completada! Puedes seguir practicando o escribir MENU.",
+    "eu": "Misioa osatuta! Praktikatzen jarraitu edo MENU idatzi dezakezu."
+  }
+}

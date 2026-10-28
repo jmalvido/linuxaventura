@@ -1,0 +1,916 @@
+{
+  "schema": 1,
+  "motor_minimo": 3,
+  "id": "actividad_011",
+  "version": 1,
+  "titulo": {
+    "es": "EXTRA — Adivina el comando (27 definiciones)",
+    "eu": "GEHIGARRIA — Asmatu komandoa (27 definizio)"
+  },
+  "requisitos": [],
+  "carpetas": [],
+  "archivos": {},
+  "pasos": [
+    {
+      "texto": {
+        "es": "DEFINICIÓN 1/27\nMuestra la ruta completa de la carpeta actual.\nEscribe COMPROBAR y, cuando aparezca la pregunta, introduce el comando como texto. No necesitas ejecutarlo.",
+        "eu": "DEFINIZIOA 1/27\nUneko karpetaren bide osoa erakusten du.\nIdatzi COMPROBAR eta, galdera agertzean, sartu komandoa testu gisa. Ez duzu exekutatu behar."
+      },
+      "pistas": {
+        "es": [
+          "El nombre del comando empieza por «p».",
+          "pwd"
+        ],
+        "eu": [
+          "Komandoaren izena «p» letraz hasten da.",
+          "pwd"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "respuesta",
+          "pregunta": {
+            "es": "Comando:",
+            "eu": "Komandoa:"
+          },
+          "respuestas": {
+            "es": [
+              "pwd"
+            ],
+            "eu": [
+              "pwd"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "texto": {
+        "es": "DEFINICIÓN 2/27\nLista los archivos y carpetas.\nEscribe COMPROBAR y, cuando aparezca la pregunta, introduce el comando como texto. No necesitas ejecutarlo.",
+        "eu": "DEFINIZIOA 2/27\nFitxategiak eta karpetak zerrendatzen ditu.\nIdatzi COMPROBAR eta, galdera agertzean, sartu komandoa testu gisa. Ez duzu exekutatu behar."
+      },
+      "pistas": {
+        "es": [
+          "El nombre del comando empieza por «l».",
+          "ls"
+        ],
+        "eu": [
+          "Komandoaren izena «l» letraz hasten da.",
+          "ls"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "respuesta",
+          "pregunta": {
+            "es": "Comando:",
+            "eu": "Komandoa:"
+          },
+          "respuestas": {
+            "es": [
+              "ls"
+            ],
+            "eu": [
+              "ls"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "texto": {
+        "es": "DEFINICIÓN 3/27\nLista también los nombres que empiezan por punto.\nEscribe COMPROBAR y, cuando aparezca la pregunta, introduce el comando como texto. No necesitas ejecutarlo.",
+        "eu": "DEFINIZIOA 3/27\nPuntuz hasten diren izenak ere zerrendatzen ditu.\nIdatzi COMPROBAR eta, galdera agertzean, sartu komandoa testu gisa. Ez duzu exekutatu behar."
+      },
+      "pistas": {
+        "es": [
+          "El nombre del comando empieza por «l».",
+          "ls -a"
+        ],
+        "eu": [
+          "Komandoaren izena «l» letraz hasten da.",
+          "ls -a"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "respuesta",
+          "pregunta": {
+            "es": "Comando:",
+            "eu": "Komandoa:"
+          },
+          "respuestas": {
+            "es": [
+              "ls -a",
+              "ls --all"
+            ],
+            "eu": [
+              "ls -a",
+              "ls --all"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "texto": {
+        "es": "DEFINICIÓN 4/27\nCambia de directorio. Escribe solo el nombre del comando.\nEscribe COMPROBAR y, cuando aparezca la pregunta, introduce el comando como texto. No necesitas ejecutarlo.",
+        "eu": "DEFINIZIOA 4/27\nDirektorioz aldatzen du. Idatzi komandoaren izena bakarrik.\nIdatzi COMPROBAR eta, galdera agertzean, sartu komandoa testu gisa. Ez duzu exekutatu behar."
+      },
+      "pistas": {
+        "es": [
+          "El nombre del comando empieza por «c».",
+          "cd"
+        ],
+        "eu": [
+          "Komandoaren izena «c» letraz hasten da.",
+          "cd"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "respuesta",
+          "pregunta": {
+            "es": "Comando:",
+            "eu": "Komandoa:"
+          },
+          "respuestas": {
+            "es": [
+              "cd"
+            ],
+            "eu": [
+              "cd"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "texto": {
+        "es": "DEFINICIÓN 5/27\nSube a la carpeta superior.\nEscribe COMPROBAR y, cuando aparezca la pregunta, introduce el comando como texto. No necesitas ejecutarlo.",
+        "eu": "DEFINIZIOA 5/27\nGoiko karpetara igotzen da.\nIdatzi COMPROBAR eta, galdera agertzean, sartu komandoa testu gisa. Ez duzu exekutatu behar."
+      },
+      "pistas": {
+        "es": [
+          "El nombre del comando empieza por «c».",
+          "cd .."
+        ],
+        "eu": [
+          "Komandoaren izena «c» letraz hasten da.",
+          "cd .."
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "respuesta",
+          "pregunta": {
+            "es": "Comando:",
+            "eu": "Komandoa:"
+          },
+          "respuestas": {
+            "es": [
+              "cd .."
+            ],
+            "eu": [
+              "cd .."
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "texto": {
+        "es": "DEFINICIÓN 6/27\nMuestra el contenido de un archivo de texto.\nEscribe COMPROBAR y, cuando aparezca la pregunta, introduce el comando como texto. No necesitas ejecutarlo.",
+        "eu": "DEFINIZIOA 6/27\nTestu-fitxategi baten edukia erakusten du.\nIdatzi COMPROBAR eta, galdera agertzean, sartu komandoa testu gisa. Ez duzu exekutatu behar."
+      },
+      "pistas": {
+        "es": [
+          "El nombre del comando empieza por «c».",
+          "cat"
+        ],
+        "eu": [
+          "Komandoaren izena «c» letraz hasten da.",
+          "cat"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "respuesta",
+          "pregunta": {
+            "es": "Comando:",
+            "eu": "Komandoa:"
+          },
+          "respuestas": {
+            "es": [
+              "cat"
+            ],
+            "eu": [
+              "cat"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "texto": {
+        "es": "DEFINICIÓN 7/27\nCrea directorios.\nEscribe COMPROBAR y, cuando aparezca la pregunta, introduce el comando como texto. No necesitas ejecutarlo.",
+        "eu": "DEFINIZIOA 7/27\nDirektorioak sortzen ditu.\nIdatzi COMPROBAR eta, galdera agertzean, sartu komandoa testu gisa. Ez duzu exekutatu behar."
+      },
+      "pistas": {
+        "es": [
+          "El nombre del comando empieza por «m».",
+          "mkdir"
+        ],
+        "eu": [
+          "Komandoaren izena «m» letraz hasten da.",
+          "mkdir"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "respuesta",
+          "pregunta": {
+            "es": "Comando:",
+            "eu": "Komandoa:"
+          },
+          "respuestas": {
+            "es": [
+              "mkdir"
+            ],
+            "eu": [
+              "mkdir"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "texto": {
+        "es": "DEFINICIÓN 8/27\nCopia archivos conservando el original.\nEscribe COMPROBAR y, cuando aparezca la pregunta, introduce el comando como texto. No necesitas ejecutarlo.",
+        "eu": "DEFINIZIOA 8/27\nFitxategiak kopiatzen ditu, jatorrizkoa mantenduz.\nIdatzi COMPROBAR eta, galdera agertzean, sartu komandoa testu gisa. Ez duzu exekutatu behar."
+      },
+      "pistas": {
+        "es": [
+          "El nombre del comando empieza por «c».",
+          "cp"
+        ],
+        "eu": [
+          "Komandoaren izena «c» letraz hasten da.",
+          "cp"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "respuesta",
+          "pregunta": {
+            "es": "Comando:",
+            "eu": "Komandoa:"
+          },
+          "respuestas": {
+            "es": [
+              "cp"
+            ],
+            "eu": [
+              "cp"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "texto": {
+        "es": "DEFINICIÓN 9/27\nMueve o renombra archivos.\nEscribe COMPROBAR y, cuando aparezca la pregunta, introduce el comando como texto. No necesitas ejecutarlo.",
+        "eu": "DEFINIZIOA 9/27\nFitxategiak mugitzen ditu edo izena aldatzen die.\nIdatzi COMPROBAR eta, galdera agertzean, sartu komandoa testu gisa. Ez duzu exekutatu behar."
+      },
+      "pistas": {
+        "es": [
+          "El nombre del comando empieza por «m».",
+          "mv"
+        ],
+        "eu": [
+          "Komandoaren izena «m» letraz hasten da.",
+          "mv"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "respuesta",
+          "pregunta": {
+            "es": "Comando:",
+            "eu": "Komandoa:"
+          },
+          "respuestas": {
+            "es": [
+              "mv"
+            ],
+            "eu": [
+              "mv"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "texto": {
+        "es": "DEFINICIÓN 10/27\nCrea un archivo vacío si no existe; si existe, actualiza sus marcas de tiempo.\nEscribe COMPROBAR y, cuando aparezca la pregunta, introduce el comando como texto. No necesitas ejecutarlo.",
+        "eu": "DEFINIZIOA 10/27\nFitxategi huts bat sortzen du ez badago; badago, denbora-markak eguneratzen ditu.\nIdatzi COMPROBAR eta, galdera agertzean, sartu komandoa testu gisa. Ez duzu exekutatu behar."
+      },
+      "pistas": {
+        "es": [
+          "El nombre del comando empieza por «t».",
+          "touch"
+        ],
+        "eu": [
+          "Komandoaren izena «t» letraz hasten da.",
+          "touch"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "respuesta",
+          "pregunta": {
+            "es": "Comando:",
+            "eu": "Komandoa:"
+          },
+          "respuestas": {
+            "es": [
+              "touch"
+            ],
+            "eu": [
+              "touch"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "texto": {
+        "es": "DEFINICIÓN 11/27\nMuestra la fecha y la hora actuales.\nEscribe COMPROBAR y, cuando aparezca la pregunta, introduce el comando como texto. No necesitas ejecutarlo.",
+        "eu": "DEFINIZIOA 11/27\nUneko data eta ordua erakusten ditu.\nIdatzi COMPROBAR eta, galdera agertzean, sartu komandoa testu gisa. Ez duzu exekutatu behar."
+      },
+      "pistas": {
+        "es": [
+          "El nombre del comando empieza por «d».",
+          "date"
+        ],
+        "eu": [
+          "Komandoaren izena «d» letraz hasten da.",
+          "date"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "respuesta",
+          "pregunta": {
+            "es": "Comando:",
+            "eu": "Komandoa:"
+          },
+          "respuestas": {
+            "es": [
+              "date"
+            ],
+            "eu": [
+              "date"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "texto": {
+        "es": "DEFINICIÓN 12/27\nMuestra un calendario.\nEscribe COMPROBAR y, cuando aparezca la pregunta, introduce el comando como texto. No necesitas ejecutarlo.",
+        "eu": "DEFINIZIOA 12/27\nEgutegi bat erakusten du.\nIdatzi COMPROBAR eta, galdera agertzean, sartu komandoa testu gisa. Ez duzu exekutatu behar."
+      },
+      "pistas": {
+        "es": [
+          "El nombre del comando empieza por «c».",
+          "cal"
+        ],
+        "eu": [
+          "Komandoaren izena «c» letraz hasten da.",
+          "cal"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "respuesta",
+          "pregunta": {
+            "es": "Comando:",
+            "eu": "Komandoa:"
+          },
+          "respuestas": {
+            "es": [
+              "cal"
+            ],
+            "eu": [
+              "cal"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "texto": {
+        "es": "DEFINICIÓN 13/27\nMuestra el mes anterior, el actual y el siguiente.\nEscribe COMPROBAR y, cuando aparezca la pregunta, introduce el comando como texto. No necesitas ejecutarlo.",
+        "eu": "DEFINIZIOA 13/27\nAurreko hilabetea, oraingoa eta hurrengoa erakusten ditu.\nIdatzi COMPROBAR eta, galdera agertzean, sartu komandoa testu gisa. Ez duzu exekutatu behar."
+      },
+      "pistas": {
+        "es": [
+          "El nombre del comando empieza por «c».",
+          "cal -3"
+        ],
+        "eu": [
+          "Komandoaren izena «c» letraz hasten da.",
+          "cal -3"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "respuesta",
+          "pregunta": {
+            "es": "Comando:",
+            "eu": "Komandoa:"
+          },
+          "respuestas": {
+            "es": [
+              "cal -3",
+              "cal --three"
+            ],
+            "eu": [
+              "cal -3",
+              "cal --three"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "texto": {
+        "es": "DEFINICIÓN 14/27\nMuestra las sesiones de usuarios registradas en el sistema.\nEscribe COMPROBAR y, cuando aparezca la pregunta, introduce el comando como texto. No necesitas ejecutarlo.",
+        "eu": "DEFINIZIOA 14/27\nSisteman erregistratutako erabiltzaile-saioak erakusten ditu.\nIdatzi COMPROBAR eta, galdera agertzean, sartu komandoa testu gisa. Ez duzu exekutatu behar."
+      },
+      "pistas": {
+        "es": [
+          "El nombre del comando empieza por «w».",
+          "who"
+        ],
+        "eu": [
+          "Komandoaren izena «w» letraz hasten da.",
+          "who"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "respuesta",
+          "pregunta": {
+            "es": "Comando:",
+            "eu": "Komandoa:"
+          },
+          "respuestas": {
+            "es": [
+              "who"
+            ],
+            "eu": [
+              "who"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "texto": {
+        "es": "DEFINICIÓN 15/27\nMuestra el nombre del usuario efectivo actual.\nEscribe COMPROBAR y, cuando aparezca la pregunta, introduce el comando como texto. No necesitas ejecutarlo.",
+        "eu": "DEFINIZIOA 15/27\nUneko erabiltzaile eraginkorraren izena erakusten du.\nIdatzi COMPROBAR eta, galdera agertzean, sartu komandoa testu gisa. Ez duzu exekutatu behar."
+      },
+      "pistas": {
+        "es": [
+          "El nombre del comando empieza por «w».",
+          "whoami"
+        ],
+        "eu": [
+          "Komandoaren izena «w» letraz hasten da.",
+          "whoami"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "respuesta",
+          "pregunta": {
+            "es": "Comando:",
+            "eu": "Komandoa:"
+          },
+          "respuestas": {
+            "es": [
+              "whoami"
+            ],
+            "eu": [
+              "whoami"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "texto": {
+        "es": "DEFINICIÓN 16/27\nAbre páginas del manual de un comando.\nEscribe COMPROBAR y, cuando aparezca la pregunta, introduce el comando como texto. No necesitas ejecutarlo.",
+        "eu": "DEFINIZIOA 16/27\nKomando baten eskuliburu-orriak irekitzen ditu.\nIdatzi COMPROBAR eta, galdera agertzean, sartu komandoa testu gisa. Ez duzu exekutatu behar."
+      },
+      "pistas": {
+        "es": [
+          "El nombre del comando empieza por «m».",
+          "man"
+        ],
+        "eu": [
+          "Komandoaren izena «m» letraz hasten da.",
+          "man"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "respuesta",
+          "pregunta": {
+            "es": "Comando:",
+            "eu": "Komandoa:"
+          },
+          "respuestas": {
+            "es": [
+              "man"
+            ],
+            "eu": [
+              "man"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "texto": {
+        "es": "DEFINICIÓN 17/27\nConsulta documentación en el sistema de ayuda Info.\nEscribe COMPROBAR y, cuando aparezca la pregunta, introduce el comando como texto. No necesitas ejecutarlo.",
+        "eu": "DEFINIZIOA 17/27\nInfo laguntza-sistemako dokumentazioa kontsultatzen du.\nIdatzi COMPROBAR eta, galdera agertzean, sartu komandoa testu gisa. Ez duzu exekutatu behar."
+      },
+      "pistas": {
+        "es": [
+          "El nombre del comando empieza por «i».",
+          "info"
+        ],
+        "eu": [
+          "Komandoaren izena «i» letraz hasten da.",
+          "info"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "respuesta",
+          "pregunta": {
+            "es": "Comando:",
+            "eu": "Komandoa:"
+          },
+          "respuestas": {
+            "es": [
+              "info"
+            ],
+            "eu": [
+              "info"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "texto": {
+        "es": "DEFINICIÓN 18/27\nLimpia la pantalla de la terminal.\nEscribe COMPROBAR y, cuando aparezca la pregunta, introduce el comando como texto. No necesitas ejecutarlo.",
+        "eu": "DEFINIZIOA 18/27\nTerminalaren pantaila garbitzen du.\nIdatzi COMPROBAR eta, galdera agertzean, sartu komandoa testu gisa. Ez duzu exekutatu behar."
+      },
+      "pistas": {
+        "es": [
+          "El nombre del comando empieza por «c».",
+          "clear"
+        ],
+        "eu": [
+          "Komandoaren izena «c» letraz hasten da.",
+          "clear"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "respuesta",
+          "pregunta": {
+            "es": "Comando:",
+            "eu": "Komandoa:"
+          },
+          "respuestas": {
+            "es": [
+              "clear"
+            ],
+            "eu": [
+              "clear"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "texto": {
+        "es": "DEFINICIÓN 19/27\nLocaliza binarios, fuentes y páginas de manual de un comando.\nEscribe COMPROBAR y, cuando aparezca la pregunta, introduce el comando como texto. No necesitas ejecutarlo.",
+        "eu": "DEFINIZIOA 19/27\nKomando baten bitarrak, iturriak eta eskuliburu-orriak kokatzen ditu.\nIdatzi COMPROBAR eta, galdera agertzean, sartu komandoa testu gisa. Ez duzu exekutatu behar."
+      },
+      "pistas": {
+        "es": [
+          "El nombre del comando empieza por «w».",
+          "whereis"
+        ],
+        "eu": [
+          "Komandoaren izena «w» letraz hasten da.",
+          "whereis"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "respuesta",
+          "pregunta": {
+            "es": "Comando:",
+            "eu": "Komandoa:"
+          },
+          "respuestas": {
+            "es": [
+              "whereis"
+            ],
+            "eu": [
+              "whereis"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "texto": {
+        "es": "DEFINICIÓN 20/27\nDefine o muestra atajos de comandos.\nEscribe COMPROBAR y, cuando aparezca la pregunta, introduce el comando como texto. No necesitas ejecutarlo.",
+        "eu": "DEFINIZIOA 20/27\nKomandoen lasterbideak definitzen edo erakusten ditu.\nIdatzi COMPROBAR eta, galdera agertzean, sartu komandoa testu gisa. Ez duzu exekutatu behar."
+      },
+      "pistas": {
+        "es": [
+          "El nombre del comando empieza por «a».",
+          "alias"
+        ],
+        "eu": [
+          "Komandoaren izena «a» letraz hasten da.",
+          "alias"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "respuesta",
+          "pregunta": {
+            "es": "Comando:",
+            "eu": "Komandoa:"
+          },
+          "respuestas": {
+            "es": [
+              "alias"
+            ],
+            "eu": [
+              "alias"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "texto": {
+        "es": "DEFINICIÓN 21/27\nElimina un alias.\nEscribe COMPROBAR y, cuando aparezca la pregunta, introduce el comando como texto. No necesitas ejecutarlo.",
+        "eu": "DEFINIZIOA 21/27\nAlias bat kentzen du.\nIdatzi COMPROBAR eta, galdera agertzean, sartu komandoa testu gisa. Ez duzu exekutatu behar."
+      },
+      "pistas": {
+        "es": [
+          "El nombre del comando empieza por «u».",
+          "unalias"
+        ],
+        "eu": [
+          "Komandoaren izena «u» letraz hasten da.",
+          "unalias"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "respuesta",
+          "pregunta": {
+            "es": "Comando:",
+            "eu": "Komandoa:"
+          },
+          "respuestas": {
+            "es": [
+              "unalias"
+            ],
+            "eu": [
+              "unalias"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "texto": {
+        "es": "DEFINICIÓN 22/27\nMuestra información del sistema y del núcleo.\nEscribe COMPROBAR y, cuando aparezca la pregunta, introduce el comando como texto. No necesitas ejecutarlo.",
+        "eu": "DEFINIZIOA 22/27\nSistemaren eta nukleoaren informazioa erakusten du.\nIdatzi COMPROBAR eta, galdera agertzean, sartu komandoa testu gisa. Ez duzu exekutatu behar."
+      },
+      "pistas": {
+        "es": [
+          "El nombre del comando empieza por «u».",
+          "uname"
+        ],
+        "eu": [
+          "Komandoaren izena «u» letraz hasten da.",
+          "uname"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "respuesta",
+          "pregunta": {
+            "es": "Comando:",
+            "eu": "Komandoa:"
+          },
+          "respuestas": {
+            "es": [
+              "uname"
+            ],
+            "eu": [
+              "uname"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "texto": {
+        "es": "DEFINICIÓN 23/27\nMuestra el nombre del equipo con una opción de uname.\nEscribe COMPROBAR y, cuando aparezca la pregunta, introduce el comando como texto. No necesitas ejecutarlo.",
+        "eu": "DEFINIZIOA 23/27\nEkipoaren izena erakusten du uname-ren aukera batekin.\nIdatzi COMPROBAR eta, galdera agertzean, sartu komandoa testu gisa. Ez duzu exekutatu behar."
+      },
+      "pistas": {
+        "es": [
+          "El nombre del comando empieza por «u».",
+          "uname -n"
+        ],
+        "eu": [
+          "Komandoaren izena «u» letraz hasten da.",
+          "uname -n"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "respuesta",
+          "pregunta": {
+            "es": "Comando:",
+            "eu": "Komandoa:"
+          },
+          "respuestas": {
+            "es": [
+              "uname -n",
+              "uname --nodename"
+            ],
+            "eu": [
+              "uname -n",
+              "uname --nodename"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "texto": {
+        "es": "DEFINICIÓN 24/27\nCambia la contraseña del usuario actual. Aquí solo debes escribir su nombre como respuesta.\nEscribe COMPROBAR y, cuando aparezca la pregunta, introduce el comando como texto. No necesitas ejecutarlo.",
+        "eu": "DEFINIZIOA 24/27\nUneko erabiltzailearen pasahitza aldatzen du. Hemen izena soilik idatzi behar duzu erantzun gisa.\nIdatzi COMPROBAR eta, galdera agertzean, sartu komandoa testu gisa. Ez duzu exekutatu behar."
+      },
+      "pistas": {
+        "es": [
+          "El nombre del comando empieza por «p».",
+          "passwd"
+        ],
+        "eu": [
+          "Komandoaren izena «p» letraz hasten da.",
+          "passwd"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "respuesta",
+          "pregunta": {
+            "es": "Comando:",
+            "eu": "Komandoa:"
+          },
+          "respuestas": {
+            "es": [
+              "passwd"
+            ],
+            "eu": [
+              "passwd"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "texto": {
+        "es": "DEFINICIÓN 25/27\nMuestra la lista de órdenes del historial de Bash.\nEscribe COMPROBAR y, cuando aparezca la pregunta, introduce el comando como texto. No necesitas ejecutarlo.",
+        "eu": "DEFINIZIOA 25/27\nBash-eko historiako aginduen zerrenda erakusten du.\nIdatzi COMPROBAR eta, galdera agertzean, sartu komandoa testu gisa. Ez duzu exekutatu behar."
+      },
+      "pistas": {
+        "es": [
+          "El nombre del comando empieza por «h».",
+          "history"
+        ],
+        "eu": [
+          "Komandoaren izena «h» letraz hasten da.",
+          "history"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "respuesta",
+          "pregunta": {
+            "es": "Comando:",
+            "eu": "Komandoa:"
+          },
+          "respuestas": {
+            "es": [
+              "history"
+            ],
+            "eu": [
+              "history"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "texto": {
+        "es": "DEFINICIÓN 26/27\nVacía la lista del historial de la sesión.\nEscribe COMPROBAR y, cuando aparezca la pregunta, introduce el comando como texto. No necesitas ejecutarlo.",
+        "eu": "DEFINIZIOA 26/27\nSaioko historiaren zerrenda husten du.\nIdatzi COMPROBAR eta, galdera agertzean, sartu komandoa testu gisa. Ez duzu exekutatu behar."
+      },
+      "pistas": {
+        "es": [
+          "El nombre del comando empieza por «h».",
+          "history -c"
+        ],
+        "eu": [
+          "Komandoaren izena «h» letraz hasten da.",
+          "history -c"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "respuesta",
+          "pregunta": {
+            "es": "Comando:",
+            "eu": "Komandoa:"
+          },
+          "respuestas": {
+            "es": [
+              "history -c"
+            ],
+            "eu": [
+              "history -c"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "texto": {
+        "es": "DEFINICIÓN 27/27\nSale del intérprete de órdenes actual.\nEscribe COMPROBAR y, cuando aparezca la pregunta, introduce el comando como texto. No necesitas ejecutarlo.",
+        "eu": "DEFINIZIOA 27/27\nUneko komando-interpretetik irteten da.\nIdatzi COMPROBAR eta, galdera agertzean, sartu komandoa testu gisa. Ez duzu exekutatu behar."
+      },
+      "pistas": {
+        "es": [
+          "El nombre del comando empieza por «e».",
+          "exit"
+        ],
+        "eu": [
+          "Komandoaren izena «e» letraz hasten da.",
+          "exit"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "respuesta",
+          "pregunta": {
+            "es": "Comando:",
+            "eu": "Komandoa:"
+          },
+          "respuestas": {
+            "es": [
+              "exit"
+            ],
+            "eu": [
+              "exit"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "final": {
+    "es": "¡Misión completada! Puedes seguir practicando o escribir MENU.",
+    "eu": "Misioa osatuta! Praktikatzen jarraitu edo MENU idatzi dezakezu."
+  }
+}

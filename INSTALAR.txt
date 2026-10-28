@@ -1,45 +1,36 @@
-LINUXAVENTURA 0.2 — COLORES Y PANTALLAS ORDENADAS
+LINUXAVENTURA 0.3 — 10 JUEGOS Y UN EXTRA
 
-Archivos del motor que debes copiar a la raíz de linuxaventura:
-  interfaz.py (nuevo)
-  motor.py (sustituir)
-  menu.py (sustituir)
-  terminal.bash (sustituir)
+1. Descomprime el paquete.
+2. Sube el CONTENIDO de la carpeta linuxaventura a la raíz de jmalvido/linuxaventura.
+   Sustituye los archivos coincidentes. No subas datos/ de ninguna máquina.
+3. En la VM, cierra el juego y ejecuta:
 
-Cierra el juego antes de sustituirlos. Copia los cuatro juntos.
-No borres datos/: conserva el progreso, las pistas y los archivos del alumno.
-No necesitas REINICIAR las actividades.
+sudo apt update
+sudo apt install python3 wget ncal man-db info
+bash ~/actualizar_linuxaventura.sh
 
-Para publicarlos: sube estos cuatro archivos a la raíz de
-https://github.com/jmalvido/linuxaventura con Add file > Upload files.
-La carpeta tests contiene una prueba opcional para el proyecto.
-No hace falta cambiar catalogo.json ni los JSON de actividades.
+Si todavía no tienes el script:
 
-ACTUALIZAR aún descarga solo actividades, no el motor. Para actualizar una
-instalación existente, después de publicar los cuatro archivos, cierra el juego
-y ejecuta en Ubuntu (si falla alguna descarga, repítela antes de abrir el juego):
+cd ~
+wget -O actualizar_linuxaventura.sh https://raw.githubusercontent.com/jmalvido/linuxaventura/main/actualizar_linuxaventura.sh
+bash ~/actualizar_linuxaventura.sh
 
-cd ~/linuxaventura
-wget -O interfaz.py https://raw.githubusercontent.com/jmalvido/linuxaventura/main/interfaz.py
-wget -O motor.py https://raw.githubusercontent.com/jmalvido/linuxaventura/main/motor.py
-wget -O menu.py https://raw.githubusercontent.com/jmalvido/linuxaventura/main/menu.py
-wget -O terminal.bash https://raw.githubusercontent.com/jmalvido/linuxaventura/main/terminal.bash
-bash jugar.sh
+4. Para jugar:
 
-CAMBIOS
-- Títulos y prompt: cian; carpeta del prompt: azul; símbolo de entrada: verde.
-- Comandos en instrucciones: amarillo.
-- Aciertos: verde; errores de comprobación: rojo; cabecera de pistas: magenta.
-- Pantalla limpia al abrir una actividad, avanzar de paso, reiniciar o volver al menú.
-- Tras avanzar, la confirmación se muestra encima del nuevo paso: no se pierde.
-- PISTA y comprobaciones fallidas mantienen lo anterior visible.
-- AYUDA muestra una pantalla ordenada con instrucciones y objetivo.
-- En el menú, AYUDA y ACTUALIZAR esperan Intro antes de volver al selector.
-- La limpieza no solicita borrar el historial de desplazamiento de la terminal.
-- Se mantiene el comportamiento en castellano y euskera.
+bash ~/linuxaventura/jugar.sh
 
-Opcional: iniciar sin colores y sin limpieza automática:
-NO_COLOR=1 LA_CLEAR=0 bash ~/linuxaventura/jugar.sh
+ACTUALIZAR dentro del juego solo descarga actividades: esta versión necesita también
+los cambios del motor, de retos.py, menú y terminal. Usa el script completo.
+El progreso y los escenarios existentes se conservan. Las actividades 1–4 no cambian.
+Los alias y el historial se guardan por actividad. REINICIAR limpia los de esa actividad.
 
-Comprobado: ocho pruebas automáticas, incluidas las cuatro actividades en ambos
-idiomas, conservación del progreso, reinicio y modos de presentación.
+Para probar antes de subirlo, copia el contenido de linuxaventura sobre tu instalación
+con el juego cerrado y sin borrar la carpeta datos. Instala también las dependencias.
+
+El extra aparece como opción 11. El último juego de la unidad es el 10: 12 etapas.
+Las soluciones y el mapa de contenidos están en docs/GUIA_PROFESOR.md.
+El README mantiene el orden acordado: qué es, descarga/juego e instrucciones.
+
+Verificación: 15 pruebas automáticas superadas, incluidas dos con Bash interactivo real.
+El calendario del expediente se simula en el test porque el entorno de desarrollo no
+tiene cal. Revisa calendario y manuales en Ubuntu durante el piloto del aula.

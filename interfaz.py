@@ -19,7 +19,7 @@ def clear():
         print('\033[2J\033[H', end='', flush=True)
 
 def highlight(text):
-    words=r'\b(?:PISTA|COMPROBAR|AYUDA|REINICIAR|MENU|ACTUALIZAR|SALIR|IDIOMA|pwd|ls|cat|cd|mkdir|cp|mv|touch)\b'
+    words=r'\b(?:PISTA|COMPROBAR|AYUDA|REINICIAR|MENU|ACTUALIZAR|SALIR|IDIOMA|pwd|ls|cat|cd|mkdir|cp|mv|touch|date|cal|ncal|who|whoami|man|info|clear|whereis|alias|unalias|uname|passwd|history|exit)\b'
     lines=[]
     for line in str(text).split('\n'):
         if line.startswith('  ') and line.strip():

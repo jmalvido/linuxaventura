@@ -1,0 +1,216 @@
+{
+  "schema": 1,
+  "motor_minimo": 3,
+  "id": "actividad_006",
+  "version": 1,
+  "titulo": {
+    "es": "¿Quién está al mando? — Usuarios y sistema",
+    "eu": "Nor dago agintean? — Erabiltzaileak eta sistema"
+  },
+  "requisitos": [],
+  "carpetas": [],
+  "archivos": {
+    "LEEME.txt": {
+      "es": "Un terminal ha llegado sin etiqueta. Identifica al operador, las sesiones y las características del sistema sin cambiar su configuración.\n",
+      "eu": "Etiketarik gabeko terminal bat iritsi da. Identifikatu erabiltzailea, saioak eta sistemaren ezaugarriak, konfigurazioa aldatu gabe.\n"
+    }
+  },
+  "pasos": [
+    {
+      "texto": {
+        "es": "Lee LEEME.txt. Descubre tu nombre de usuario con whoami. Escribe COMPROBAR y responde con el resultado de tu máquina.",
+        "eu": "Irakurri LEEME.txt. Aurkitu zure erabiltzaile-izena whoami erabiliz. Idatzi COMPROBAR eta erantzun zure makinaren emaitzarekin."
+      },
+      "pistas": {
+        "es": [
+          "Se pide el usuario, no el nombre de la máquina.",
+          "whoami\nCOMPROBAR"
+        ],
+        "eu": [
+          "Erabiltzailea eskatzen da, ez makinaren izena.",
+          "whoami\nCOMPROBAR"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "respuesta_sistema",
+          "consulta": "usuario",
+          "pregunta": {
+            "es": "Usuario actual:",
+            "eu": "Uneko erabiltzailea:"
+          }
+        }
+      ]
+    },
+    {
+      "texto": {
+        "es": "Consulta who y who -a. Observa las sesiones registradas y la información adicional. Una salida vacía de who puede ser normal en una VM: no significa que no tengas usuario. COMPROBAR preguntará qué comando identifica al usuario que ejecuta una orden.",
+        "eu": "Kontsultatu who eta who -a. Begiratu erregistratutako saioak eta informazio osagarria. VM batean who hutsik agertzea normala izan daiteke: horrek ez du esan nahi erabiltzailerik ez duzunik. COMPROBAR aukerak agindua exekutatzen duen erabiltzailea identifikatzeko komandoa galdetuko du."
+      },
+      "pistas": {
+        "es": [
+          "who enumera sesiones registradas; whoami identifica al usuario efectivo.",
+          "who\nwho -a\nCOMPROBAR → whoami"
+        ],
+        "eu": [
+          "who komandoak erregistratutako saioak zerrendatzen ditu; whoami komandoak erabiltzaile eraginkorra identifikatzen du.",
+          "who\nwho -a\nCOMPROBAR → whoami"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "ejecutado",
+          "comandos": [
+            "who"
+          ]
+        },
+        {
+          "tipo": "ejecutado",
+          "comandos": [
+            "who -a",
+            "who --all"
+          ]
+        },
+        {
+          "tipo": "respuesta",
+          "pregunta": {
+            "es": "Comando para identificar al usuario actual:",
+            "eu": "Uneko erabiltzailea identifikatzeko komandoa:"
+          },
+          "respuestas": {
+            "es": [
+              "whoami"
+            ],
+            "eu": [
+              "whoami"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "texto": {
+        "es": "La etiqueta debe distinguir núcleo y equipo. Consulta uname -s y uname -n. Escribe COMPROBAR y responde las dos preguntas.",
+        "eu": "Etiketak nukleoa eta ekipoa bereizi behar ditu. Kontsultatu uname -s eta uname -n. Idatzi COMPROBAR eta erantzun bi galderei."
+      },
+      "pistas": {
+        "es": [
+          "-s informa del núcleo; -n del nombre del equipo.",
+          "uname -s\nuname -n\nCOMPROBAR"
+        ],
+        "eu": [
+          "-s: nukleoa; -n: ekipoaren izena.",
+          "uname -s\nuname -n\nCOMPROBAR"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "respuesta_sistema",
+          "consulta": "nucleo",
+          "pregunta": {
+            "es": "Nombre del núcleo:",
+            "eu": "Nukleoaren izena:"
+          }
+        },
+        {
+          "tipo": "respuesta_sistema",
+          "consulta": "equipo",
+          "pregunta": {
+            "es": "Nombre del equipo:",
+            "eu": "Ekipoaren izena:"
+          }
+        }
+      ]
+    },
+    {
+      "texto": {
+        "es": "Consulta la versión del núcleo, su información de compilación y la arquitectura con uname -r, uname -v y uname -m. COMPROBAR pedirá la versión y la arquitectura.",
+        "eu": "Kontsultatu nukleoaren bertsioa, konpilazio-informazioa eta arkitektura uname -r, uname -v eta uname -m erabiliz. COMPROBAR aukerak bertsioa eta arkitektura eskatuko ditu."
+      },
+      "pistas": {
+        "es": [
+          "La versión puede ser larga: copia la salida completa.",
+          "uname -r\nuname -v\nuname -m\nCOMPROBAR"
+        ],
+        "eu": [
+          "Bertsioa luzea izan daiteke: kopiatu emaitza osoa.",
+          "uname -r\nuname -v\nuname -m\nCOMPROBAR"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "ejecutado",
+          "comandos": [
+            "uname -v",
+            "uname --kernel-version"
+          ]
+        },
+        {
+          "tipo": "respuesta_sistema",
+          "consulta": "version",
+          "pregunta": {
+            "es": "Versión del núcleo:",
+            "eu": "Nukleoaren bertsioa:"
+          }
+        },
+        {
+          "tipo": "respuesta_sistema",
+          "consulta": "arquitectura",
+          "pregunta": {
+            "es": "Arquitectura:",
+            "eu": "Arkitektura:"
+          }
+        }
+      ]
+    },
+    {
+      "texto": {
+        "es": "Completa la identificación: prueba uname -p, uname -i, uname -o y uname -a. -p o -i pueden devolver unknown; no es un error del juego. COMPROBAR pedirá el sistema operativo mostrado por -o.",
+        "eu": "Osatu identifikazioa: probatu uname -p, uname -i, uname -o eta uname -a. -p edo -i aukerek unknown eman dezakete; ez da jokoaren errorea. COMPROBAR aukerak -o bidez erakutsitako sistema eragilea eskatuko du."
+      },
+      "pistas": {
+        "es": [
+          "-a reúne información; -o muestra el sistema operativo.",
+          "uname -p\nuname -i\nuname -o\nuname -a\nCOMPROBAR"
+        ],
+        "eu": [
+          "-a aukerak informazioa biltzen du; -o aukerak sistema eragilea erakusten du.",
+          "uname -p\nuname -i\nuname -o\nuname -a\nCOMPROBAR"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "ejecutado",
+          "comandos": [
+            "uname -p"
+          ]
+        },
+        {
+          "tipo": "ejecutado",
+          "comandos": [
+            "uname -i"
+          ]
+        },
+        {
+          "tipo": "ejecutado",
+          "comandos": [
+            "uname -a",
+            "uname --all"
+          ]
+        },
+        {
+          "tipo": "respuesta_sistema",
+          "consulta": "so",
+          "pregunta": {
+            "es": "Sistema operativo:",
+            "eu": "Sistema eragilea:"
+          }
+        }
+      ]
+    }
+  ],
+  "final": {
+    "es": "¡Misión completada! Puedes seguir practicando o escribir MENU.",
+    "eu": "Misioa osatuta! Praktikatzen jarraitu edo MENU idatzi dezakezu."
+  }
+}

@@ -75,9 +75,10 @@ class GameTests(unittest.TestCase):
         self.assertEqual(m.load(a['id'])[1]['idioma_escenario'],'eu')
         self.assertTrue((m.load(b['id'])[2]/'personal.txt').exists())
     def test_update_pins_existing_and_adds_new(self):
+        original_count=len(m.available())
         a=m.available()[0]; m.start(a)
         changed=copy.deepcopy(a); changed['version']=2
-        new=copy.deepcopy(a); new['id']='actividad_005'
+        new=copy.deepcopy(a); new['id']='actividad_999'
         payloads={}
         entries=[]
         for x in (changed,new):
@@ -88,7 +89,7 @@ class GameTests(unittest.TestCase):
         with patch.object(m,'fetch',side_effect=lambda url:payloads[url.split('/main/')[1]]),contextlib.redirect_stdout(io.StringIO()):m.update()
         self.assertEqual(m.load(a['id'])[0]['version'],1)
         self.assertEqual(m.read(m.CATALOG/'actividad_001.json')['version'],2)
-        self.assertEqual(len(m.available()),5)
+        self.assertEqual(len(m.available()),original_count+1)
         with patch('builtins.input',return_value='REINICIAR'),contextlib.redirect_stdout(io.StringIO()):m.reset(a['id'])
         self.assertEqual(m.load(a['id'])[0]['version'],2)
     def test_failed_download_and_path_escape(self):

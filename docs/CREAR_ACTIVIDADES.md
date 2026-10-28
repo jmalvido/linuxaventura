@@ -47,3 +47,20 @@ Límite de la versión 0.1: estas pruebas cubren navegación y operaciones de ar
 Permisos, usuarios, procesos, servicios y ejecución/evaluación de scripts necesitarán
 nuevos tipos de comprobación en el motor. Los alumnos YA pueden escribir y ejecutar
 scripts en la terminal real; su evaluación automática se ampliará cuando la diseñemos.
+
+
+## Motor 0.3: comprobaciones de la unidad
+
+Las actividades 005–011 llevan `motor_minimo: 3`. Se mantiene schema: 1.
+
+- respuesta_sistema: pregunta es/eu y consulta (clave fija de retos.QUERIES).
+- salida: ruta del archivo y consulta cuya salida debe contener.
+- alias: nombre y lista valores con secuencias de comandos admitidas.
+- sin_alias: nombre que no debe estar definido.
+- ejecutado: lista comandos; alguno debe aparecer como orden completa en el historial.
+- historial_limpio: admite únicamente history, history -w y COMPROBAR tras limpiar.
+- reentrada: requiere una sesión distinta de aquella donde se superó el paso anterior.
+- requisitos: lista opcional de ejecutables que el menú comprueba antes de entrar.
+
+retos.py solo ejecuta consultas de lectura de una lista fija. Los JSON no se ejecutan como código.
+Las pruebas basadas en historial son para práctica guiada; el historial puede manipularse.

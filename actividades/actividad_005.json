@@ -1,0 +1,187 @@
+{
+  "schema": 1,
+  "motor_minimo": 3,
+  "id": "actividad_005",
+  "version": 1,
+  "titulo": {
+    "es": "La agenda perdida — Fecha y calendario",
+    "eu": "Galdutako agenda — Data eta egutegia"
+  },
+  "requisitos": [
+    "cal",
+    "man"
+  ],
+  "carpetas": [],
+  "archivos": {
+    "LEEME.txt": {
+      "es": "La agenda del centro IZAR ha perdido sus fechas. Reconstruye el día actual y prepara la reunión de febrero de 2028.\n",
+      "eu": "IZAR zentroko agendak datak galdu ditu. Aurkitu gaurko data eta prestatu 2028ko otsaileko bilera.\n"
+    }
+  },
+  "pasos": [
+    {
+      "texto": {
+        "es": "Lee LEEME.txt. Ejecuta date para consultar la fecha del sistema. Después prueba date +%Y-%m-%d. Al escribir COMPROBAR introduce la fecha con formato año-mes-día. No cambies el reloj.",
+        "eu": "Irakurri LEEME.txt. Exekutatu date sistemaren data ikusteko. Ondoren, probatu date +%Y-%m-%d. COMPROBAR idaztean, sartu data urte-hilabete-egun formatuan. Ez aldatu erlojua."
+      },
+      "pistas": {
+        "es": [
+          "El símbolo + introduce el formato de salida; %Y es el año, %m el mes y %d el día.",
+          "date\ndate +%Y-%m-%d\nCOMPROBAR"
+        ],
+        "eu": [
+          "+ ikurrak irteeraren formatua adierazten du; %Y urtea da, %m hilabetea eta %d eguna.",
+          "date\ndate +%Y-%m-%d\nCOMPROBAR"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "ejecutado",
+          "comandos": [
+            "date"
+          ]
+        },
+        {
+          "tipo": "respuesta_sistema",
+          "consulta": "fecha",
+          "pregunta": {
+            "es": "Fecha (AAAA-MM-DD):",
+            "eu": "Data (UUUU-HH-EE):"
+          }
+        }
+      ]
+    },
+    {
+      "texto": {
+        "es": "Necesitas ver el mes anterior, el actual y el siguiente. Consulta man cal y prueba cal -3. Sal del manual con q. Después COMPROBAR: se revisará la orden que has probado.",
+        "eu": "Aurreko hilabetea, oraingoa eta hurrengoa ikusi behar dituzu. Kontsultatu man cal eta probatu cal -3. Eskuliburutik irteteko sakatu q. Ondoren COMPROBAR: probatutako agindua egiaztatuko da."
+      },
+      "pistas": {
+        "es": [
+          "Una opción de cal permite mostrar tres meses.",
+          "man cal\ncal -3\nCOMPROBAR"
+        ],
+        "eu": [
+          "cal komandoaren aukera batek hiru hilabete erakusten ditu.",
+          "man cal\ncal -3\nCOMPROBAR"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "ejecutado",
+          "comandos": [
+            "man cal"
+          ]
+        },
+        {
+          "tipo": "ejecutado",
+          "comandos": [
+            "cal -3"
+          ]
+        }
+      ]
+    },
+    {
+      "texto": {
+        "es": "La reunión es en febrero de 2028. Muestra ese calendario y averigua cuántos días tiene. Usa mes y año como argumentos de cal. Después COMPROBAR.",
+        "eu": "Bilera 2028ko otsailean izango da. Erakutsi egutegi hori eta aurkitu zenbat egun dituen. Erabili hilabetea eta urtea cal komandoaren argumentu gisa. Ondoren COMPROBAR."
+      },
+      "pistas": {
+        "es": [
+          "El mes se indica mediante un número del 1 al 12.",
+          "cal 2 2028\nCOMPROBAR → 29"
+        ],
+        "eu": [
+          "Hilabetea 1etik 12ra bitarteko zenbaki batez adierazten da.",
+          "cal 2 2028\nCOMPROBAR → 29"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "ejecutado",
+          "comandos": [
+            "cal 2 2028"
+          ]
+        },
+        {
+          "tipo": "respuesta",
+          "pregunta": {
+            "es": "¿Cuántos días tiene febrero de 2028?",
+            "eu": "Zenbat egun ditu 2028ko otsailak?"
+          },
+          "respuestas": {
+            "es": [
+              "29"
+            ],
+            "eu": [
+              "29"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "texto": {
+        "es": "Para organizar todo el curso, muestra el año actual completo con cal -y. Después muestra un calendario con semanas que empiecen en lunes. En Ubuntu con ncal: ncal -b -M. En cal de util-linux: cal -m. Consulta man cal para elegir la opción de tu versión. COMPROBAR.",
+        "eu": "Ikasturtea antolatzeko, erakutsi uneko urte osoa cal -y erabiliz. Ondoren, erakutsi asteak astelehenean hasten diren egutegia. Ubuntu eta ncal erabiliz: ncal -b -M. util-linux bertsioan: cal -m. Kontsultatu man cal zure bertsioaren aukera hautatzeko. COMPROBAR."
+      },
+      "pistas": {
+        "es": [
+          "Las opciones de cal cambian entre implementaciones. No confundas -m con -M.",
+          "cal -y\nncal -b -M\nCOMPROBAR"
+        ],
+        "eu": [
+          "cal aukerak bertsioaren arabera aldatzen dira. Ez nahastu -m eta -M.",
+          "cal -y\nncal -b -M\nCOMPROBAR"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "ejecutado",
+          "comandos": [
+            "cal -y"
+          ]
+        },
+        {
+          "tipo": "ejecutado",
+          "comandos": [
+            "ncal -b -M",
+            "ncal -M -b",
+            "cal -m",
+            "cal --monday"
+          ]
+        }
+      ]
+    },
+    {
+      "texto": {
+        "es": "Deja la fecha en una sola línea con día, mes y nombre del día de la semana. Las comillas permiten incluir espacios en el formato. Ejecuta la orden y escribe COMPROBAR para copiar el resultado.",
+        "eu": "Utzi data lerro bakarrean: eguna, hilabetea eta asteko egunaren izena. Komatxoek formatuan zuriuneak sartzeko aukera ematen dute. Exekutatu agindua eta idatzi COMPROBAR emaitza kopiatzeko."
+      },
+      "pistas": {
+        "es": [
+          "%A muestra el nombre del día en el idioma del sistema.",
+          "date \"+%d %m %A\"\nCOMPROBAR"
+        ],
+        "eu": [
+          "%A aukerak egunaren izena sistemaren hizkuntzan erakusten du.",
+          "date \"+%d %m %A\"\nCOMPROBAR"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "respuesta_sistema",
+          "consulta": "fecha_detalle",
+          "pregunta": {
+            "es": "Resultado (día mes día-de-la-semana):",
+            "eu": "Emaitza (eguna hilabetea asteko-eguna):"
+          }
+        }
+      ]
+    }
+  ],
+  "final": {
+    "es": "¡Misión completada! Puedes seguir practicando o escribir MENU.",
+    "eu": "Misioa osatuta! Praktikatzen jarraitu edo MENU idatzi dezakezu."
+  }
+}

@@ -1,0 +1,218 @@
+{
+  "schema": 1,
+  "motor_minimo": 3,
+  "id": "actividad_007",
+  "version": 1,
+  "titulo": {
+    "es": "La biblioteca del terminal — Ayuda y localización",
+    "eu": "Terminalaren liburutegia — Laguntza eta kokapena"
+  },
+  "requisitos": [
+    "man",
+    "info"
+  ],
+  "carpetas": [],
+  "archivos": {
+    "LEEME.txt": {
+      "es": "La biblioteca de IZAR guarda las instrucciones para trabajar sin memorizarlo todo. Busca una página de manual, una guía Info y dos herramientas.\n",
+      "eu": "IZAR liburutegiak dena buruz ikasi gabe lan egiteko argibideak gordetzen ditu. Bilatu eskuliburu-orri bat, Info gida bat eta bi tresna.\n"
+    },
+    "documentos/Informe de bienvenida.txt": {
+      "es": "Has abierto un archivo con espacios. Clave: TABULADOR\n",
+      "eu": "Zuriuneak dituen fitxategia ireki duzu. Gakoa: TABULADOR\n"
+    }
+  },
+  "pasos": [
+    {
+      "texto": {
+        "es": "Lee LEEME.txt. Abre man whereis. Busca la opción que limita la búsqueda a los ejecutables y sal con q. COMPROBAR pedirá esa opción.",
+        "eu": "Irakurri LEEME.txt. Ireki man whereis. Bilatu bilaketa exekutagarrietara mugatzen duen aukera eta irten q erabiliz. COMPROBAR aukerak aukera hori eskatuko du."
+      },
+      "pistas": {
+        "es": [
+          "En el manual puedes buscar escribiendo / y una palabra; n lleva a la coincidencia siguiente.",
+          "man whereis\nCOMPROBAR → -b"
+        ],
+        "eu": [
+          "Eskuliburuan / eta hitz bat idatziz bila dezakezu; n sakatuta hurrengo emaitzara joango zara.",
+          "man whereis\nCOMPROBAR → -b"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "ejecutado",
+          "comandos": [
+            "man whereis"
+          ]
+        },
+        {
+          "tipo": "respuesta",
+          "pregunta": {
+            "es": "Opción para buscar solo binarios:",
+            "eu": "Bitar fitxategiak soilik bilatzeko aukera:"
+          },
+          "respuestas": {
+            "es": [
+              "-b"
+            ],
+            "eu": [
+              "-b"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "texto": {
+        "es": "Localiza date y uname con whereis. Después consulta whereis -b date para distinguir el ejecutable de su manual. COMPROBAR revisará las consultas.",
+        "eu": "Aurkitu date eta uname whereis erabiliz. Ondoren, kontsultatu whereis -b date exekutagarria eta eskuliburua bereizteko. COMPROBAR aukerak kontsultak egiaztatuko ditu."
+      },
+      "pistas": {
+        "es": [
+          "whereis admite varios nombres después del comando.",
+          "whereis date uname\nwhereis -b date\nCOMPROBAR"
+        ],
+        "eu": [
+          "whereis komandoak hainbat izen onartzen ditu.",
+          "whereis date uname\nwhereis -b date\nCOMPROBAR"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "ejecutado",
+          "comandos": [
+            "whereis date uname",
+            "whereis uname date"
+          ]
+        },
+        {
+          "tipo": "ejecutado",
+          "comandos": [
+            "whereis -b date"
+          ]
+        }
+      ]
+    },
+    {
+      "texto": {
+        "es": "Prueba la otra ayuda del temario: info date. Desplázate por el documento y vuelve con q. Después abre man date para comparar. COMPROBAR pedirá el nombre del segundo sistema de ayuda, distinto de man.",
+        "eu": "Probatu gaiko beste laguntza: info date. Mugitu dokumentuan eta itzuli q sakatuz. Ondoren, ireki man date alderatzeko. COMPROBAR aukerak man ez den beste laguntza-sistemaren izena eskatuko du."
+      },
+      "pistas": {
+        "es": [
+          "Info puede mostrar documentación estructurada o remitir a una página de manual.",
+          "info date\nman date\nCOMPROBAR → info"
+        ],
+        "eu": [
+          "Info-k dokumentazio egituratua erakuts dezake edo eskuliburu-orri batera bideratu.",
+          "info date\nman date\nCOMPROBAR → info"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "ejecutado",
+          "comandos": [
+            "info date"
+          ]
+        },
+        {
+          "tipo": "ejecutado",
+          "comandos": [
+            "man date"
+          ]
+        },
+        {
+          "tipo": "respuesta",
+          "pregunta": {
+            "es": "Sistema de ayuda:",
+            "eu": "Laguntza-sistema:"
+          },
+          "respuestas": {
+            "es": [
+              "info"
+            ],
+            "eu": [
+              "info"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "texto": {
+        "es": "Dentro de documentos hay un nombre con espacios. Escribe cat documentos/Inf y pulsa Tab para completarlo; después Intro. También puedes usar comillas. Lee la clave y escribe COMPROBAR. Se comprueba la lectura, no la pulsación de Tab.",
+        "eu": "documentos barruan zuriuneak dituen izen bat dago. Idatzi cat documentos/Inf eta sakatu Tab osatzeko; ondoren Sartu. Komatxoak ere erabil ditzakezu. Irakurri gakoa eta idatzi COMPROBAR. Irakurketa egiaztatzen da, ez Tab tekla sakatu izana."
+      },
+      "pistas": {
+        "es": [
+          "Un nombre con espacios debe ir entre comillas o con los espacios escapados.",
+          "cat \"documentos/Informe de bienvenida.txt\"\nCOMPROBAR → TABULADOR"
+        ],
+        "eu": [
+          "Zuriuneak dituen izena komatxo artean edo zuriuneak ihes eginda idatzi behar da.",
+          "cat \"documentos/Informe de bienvenida.txt\"\nCOMPROBAR → TABULADOR"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "respuesta",
+          "pregunta": {
+            "es": "Clave del documento:",
+            "eu": "Dokumentuko gakoa:"
+          },
+          "respuestas": {
+            "es": [
+              "TABULADOR"
+            ],
+            "eu": [
+              "TABULADOR"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "texto": {
+        "es": "Mira el final de tu prompt. En un prompt convencional, $ suele indicar usuario normal y # root. Limpia la pantalla con clear y escribe COMPROBAR: ¿qué símbolo suele identificar a root? No cambies de usuario.",
+        "eu": "Begiratu prompt-aren amaiera. Ohiko prompt batean, $ erabiltzaile arrunta izan ohi da eta # root. Garbitu pantaila clear erabiliz eta idatzi COMPROBAR: zer ikurrek adierazi ohi du root? Ez aldatu erabiltzailea."
+      },
+      "pistas": {
+        "es": [
+          "El prompt es personalizable; el símbolo por sí solo no demuestra los permisos.",
+          "clear\nCOMPROBAR → #"
+        ],
+        "eu": [
+          "Prompt-a pertsonaliza daiteke; ikurrak bakarrik ez ditu baimenak frogatzen.",
+          "clear\nCOMPROBAR → #"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "ejecutado",
+          "comandos": [
+            "clear"
+          ]
+        },
+        {
+          "tipo": "respuesta",
+          "pregunta": {
+            "es": "Símbolo habitual de root:",
+            "eu": "Root-en ohiko ikurra:"
+          },
+          "respuestas": {
+            "es": [
+              "#"
+            ],
+            "eu": [
+              "#"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "final": {
+    "es": "¡Misión completada! Puedes seguir practicando o escribir MENU.",
+    "eu": "Misioa osatuta! Praktikatzen jarraitu edo MENU idatzi dezakezu."
+  }
+}

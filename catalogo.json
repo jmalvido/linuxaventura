@@ -16,6 +16,34 @@
     {
       "archivo": "actividad_004.json",
       "sha256": "11a55cfedff791a44b454e738a943bdacc1eb802bd0b99e778774bdc2e6f4e4c"
+    },
+    {
+      "archivo": "actividad_005.json",
+      "sha256": "083294c712af32e54eb1962d69a81bf775db499ded91c744f73e93c15cf81857"
+    },
+    {
+      "archivo": "actividad_006.json",
+      "sha256": "42375bf7d7ba174e4d13d6713d6443cc7c3982e1e61c5aff1253452a1735a10a"
+    },
+    {
+      "archivo": "actividad_007.json",
+      "sha256": "58eda8f7e605bcbefc06969dd32af733eaf33493f85731eae954a3ec3a6290bb"
+    },
+    {
+      "archivo": "actividad_008.json",
+      "sha256": "234652261948da3cac68c40276233e65429ad16954bfc3a4e3401d4c7a10dc25"
+    },
+    {
+      "archivo": "actividad_009.json",
+      "sha256": "3686cf5b8266a8bc63131df6efbc7f68597460afbb35e0ba9c6511d090abe9f8"
+    },
+    {
+      "archivo": "actividad_010.json",
+      "sha256": "6278bb9e0707527d28b1a313950d10cd302c67b7d4b885f2286833bcc10eb16f"
+    },
+    {
+      "archivo": "actividad_011.json",
+      "sha256": "bbdb9f788861d2a7fea9a4d72ee7f9d53d8d813fd95269fdff7127975cf5915f"
     }
   ]
 }

@@ -1,0 +1,704 @@
+{
+  "schema": 1,
+  "motor_minimo": 3,
+  "id": "actividad_010",
+  "version": 1,
+  "titulo": {
+    "es": "Operación IZAR — Misión final de la unidad",
+    "eu": "IZAR operazioa — Unitateko azken misioa"
+  },
+  "requisitos": [
+    "cal",
+    "man",
+    "info"
+  ],
+  "carpetas": [],
+  "archivos": {
+    "LEEME.txt": {
+      "es": "OPERACIÓN IZAR: reapertura del centro.\nEl servidor ha perdido su expediente de mantenimiento. Reconstrúyelo, identifica al operador y a la máquina, prepara el calendario y aísla un archivo sospechoso.\nTodo se resuelve dentro del escenario. No uses sudo ni cambies contraseñas.\nLa primera clave está en archivo/.orden.txt.\n",
+      "eu": "IZAR OPERAZIOA: zentroa berriro irekitzea.\nZerbitzariak mantentze-espedientea galdu du. Berreraiki, identifikatu operadorea eta makina, prestatu egutegia eta isolatu fitxategi susmagarri bat.\nDena eszenatokiaren barruan ebazten da. Ez erabili sudo eta ez aldatu pasahitzik.\nLehen gakoa archivo/.orden.txt fitxategian dago.\n"
+    },
+    "archivo/.orden.txt": {
+      "es": "Clave de apertura: IZAR-2028\nConsulta fuentes/aviso.txt para identificar el sospechoso.\n",
+      "eu": "Irekitzeko gakoa: IZAR-2028\nKontsultatu fuentes/aviso.txt susmagarria identifikatzeko.\n"
+    },
+    "fuentes/aviso.txt": {
+      "es": "El archivo que contiene la marca NIEBLA-42 debe aislarse. No basta con mirar su nombre. Conserva los originales de este aviso y de las normas.\n",
+      "eu": "NIEBLA-42 marka duen fitxategia isolatu behar da. Ez da nahikoa izena begiratzea. Mantendu abisu honen eta arauen jatorrizkoak.\n"
+    },
+    "fuentes/normas.txt": {
+      "es": "Los informes deben conservarse íntegros. La reunión será en febrero de 2028.\n",
+      "eu": "Txostenak osorik mantendu behar dira. Bilera 2028ko otsailean izango da.\n"
+    },
+    "archivo/paquetes/registro.txt": {
+      "es": "Registro validado. Marca: LIMPIO-01.\n",
+      "eu": "Erregistro balioztatua. Marka: LIMPIO-01.\n"
+    },
+    "archivo/paquetes/resumen.txt": {
+      "es": "Texto de entrenamiento. Marca: NIEBLA-42. Archivo inofensivo que representa una incidencia.\n",
+      "eu": "Entrenamendu-testua. Marka: NIEBLA-42. Gorabehera bat irudikatzen duen fitxategi kaltegabea.\n"
+    },
+    "archivo/paquetes/antivirus.txt": {
+      "es": "Control validado. Marca: LIMPIO-02.\n",
+      "eu": "Kontrol balioztatua. Marka: LIMPIO-02.\n"
+    }
+  },
+  "pasos": [
+    {
+      "texto": {
+        "es": "MISIÓN FINAL. Habrá menos indicaciones y más objetivos que combinar. Lee LEEME.txt, explora el escenario y encuentra la clave oculta. No borres archivos por tu cuenta. COMPROBAR.",
+        "eu": "AZKEN MISIOA. Argibide gutxiago eta konbinatu beharreko helburu gehiago izango dira. Irakurri LEEME.txt, arakatu eszenatokia eta aurkitu ezkutuko gakoa. Ez ezabatu fitxategirik zure kabuz. COMPROBAR."
+      },
+      "pistas": {
+        "es": [
+          "Combina lectura, navegación y listado de archivos ocultos.",
+          "cat LEEME.txt\nls -a archivo\ncat archivo/.orden.txt\nCOMPROBAR → IZAR-2028"
+        ],
+        "eu": [
+          "Konbinatu irakurketa, nabigazioa eta ezkutuko fitxategien zerrenda.",
+          "cat LEEME.txt\nls -a archivo\ncat archivo/.orden.txt\nCOMPROBAR → IZAR-2028"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "respuesta",
+          "pregunta": {
+            "es": "Clave de apertura:",
+            "eu": "Irekitzeko gakoa:"
+          },
+          "respuestas": {
+            "es": [
+              "IZAR-2028"
+            ],
+            "eu": [
+              "IZAR-2028"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "texto": {
+        "es": "En la raíz del escenario crea expediente, con informes y copias dentro, y una carpeta cuarentena fuera de expediente. Copia aviso.txt a copias. Copia normas.txt a expediente y renombra esa copia como protocolo.txt. Conserva los originales. COMPROBAR.",
+        "eu": "Eszenatokiaren erroan sortu expediente, barruan informes eta copias dituela, eta cuarentena karpeta expediente-tik kanpo. Kopiatu aviso.txt copias karpetara. Kopiatu normas.txt expediente-ra eta aldatu kopiaren izena protocolo.txt izatera. Mantendu jatorrizkoak. COMPROBAR."
+      },
+      "pistas": {
+        "es": [
+          "Puedes crear la estructura por partes. Renombra solo la copia.",
+          "mkdir -p expediente/informes expediente/copias cuarentena\ncp fuentes/aviso.txt expediente/copias/\ncp fuentes/normas.txt expediente/\nmv expediente/normas.txt expediente/protocolo.txt\nCOMPROBAR"
+        ],
+        "eu": [
+          "Egitura zatika sor dezakezu. Aldatu kopiaren izena bakarrik.",
+          "mkdir -p expediente/informes expediente/copias cuarentena\ncp fuentes/aviso.txt expediente/copias/\ncp fuentes/normas.txt expediente/\nmv expediente/normas.txt expediente/protocolo.txt\nCOMPROBAR"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "carpeta",
+          "ruta": "expediente/informes"
+        },
+        {
+          "tipo": "carpeta",
+          "ruta": "expediente/copias"
+        },
+        {
+          "tipo": "contenido",
+          "ruta": "expediente/copias/aviso.txt",
+          "origen": "fuentes/aviso.txt"
+        },
+        {
+          "tipo": "contenido",
+          "ruta": "expediente/protocolo.txt",
+          "origen": "fuentes/normas.txt"
+        },
+        {
+          "tipo": "contenido",
+          "ruta": "fuentes/aviso.txt",
+          "origen": "fuentes/aviso.txt"
+        },
+        {
+          "tipo": "contenido",
+          "ruta": "fuentes/normas.txt",
+          "origen": "fuentes/normas.txt"
+        },
+        {
+          "tipo": "carpeta",
+          "ruta": "cuarentena"
+        }
+      ]
+    },
+    {
+      "texto": {
+        "es": "Pequeña ampliación: > guarda la salida de una orden en un archivo; sustituye su contenido si ya existe. Ejemplo: whoami > expediente/informes/operador.txt. Crea ese informe y otro llamado equipo.txt con el nombre de la máquina. Lee ambos para revisarlos. COMPROBAR.",
+        "eu": "Hedapen txiki bat: > ikurrak aginduaren irteera fitxategi batean gordetzen du; badago, edukia ordezten du. Adibidea: whoami > expediente/informes/operador.txt. Sortu txosten hori eta equipo.txt izeneko beste bat makinaren izenarekin. Irakurri biak egiaztatzeko. COMPROBAR."
+      },
+      "pistas": {
+        "es": [
+          "Usa uname con la opción de nombre de equipo y redirige la salida.",
+          "whoami > expediente/informes/operador.txt\nuname -n > expediente/informes/equipo.txt\ncat expediente/informes/operador.txt\ncat expediente/informes/equipo.txt\nCOMPROBAR"
+        ],
+        "eu": [
+          "Erabili uname ekipoaren izena ematen duen aukerarekin eta birbideratu irteera.",
+          "whoami > expediente/informes/operador.txt\nuname -n > expediente/informes/equipo.txt\ncat expediente/informes/operador.txt\ncat expediente/informes/equipo.txt\nCOMPROBAR"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "salida",
+          "ruta": "expediente/informes/operador.txt",
+          "consulta": "usuario"
+        },
+        {
+          "tipo": "salida",
+          "ruta": "expediente/informes/equipo.txt",
+          "consulta": "equipo"
+        }
+      ]
+    },
+    {
+      "texto": {
+        "es": "Guarda la versión del núcleo en expediente/informes/nucleo.txt y la arquitectura en expediente/informes/arquitectura.txt. Consulta además el nombre del núcleo, la información de compilación, procesador, plataforma, sistema operativo y el resumen completo con uname. Recuerda que unknown puede ser válido. COMPROBAR.",
+        "eu": "Gorde nukleoaren bertsioa expediente/informes/nucleo.txt fitxategian eta arkitektura expediente/informes/arquitectura.txt fitxategian. Kontsultatu nukleoaren izena, konpilazioaren, prozesadorearen eta plataformaren informazioa, sistema eragilea eta laburpen osoa ere uname erabiliz. Gogoratu unknown baliozkoa izan daitekeela. COMPROBAR."
+      },
+      "pistas": {
+        "es": [
+          "Son las opciones -r, -m, -v, -p y -i de uname.",
+          "uname -r > expediente/informes/nucleo.txt\nuname -m > expediente/informes/arquitectura.txt\nuname -s\nuname -o\nuname -a\nuname -v\nuname -p\nuname -i\nCOMPROBAR"
+        ],
+        "eu": [
+          "uname komandoaren -r, -m, -v, -p eta -i aukerak dira.",
+          "uname -r > expediente/informes/nucleo.txt\nuname -m > expediente/informes/arquitectura.txt\nuname -s\nuname -o\nuname -a\nuname -v\nuname -p\nuname -i\nCOMPROBAR"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "salida",
+          "ruta": "expediente/informes/nucleo.txt",
+          "consulta": "version"
+        },
+        {
+          "tipo": "salida",
+          "ruta": "expediente/informes/arquitectura.txt",
+          "consulta": "arquitectura"
+        },
+        {
+          "tipo": "ejecutado",
+          "comandos": [
+            "uname -v"
+          ]
+        },
+        {
+          "tipo": "ejecutado",
+          "comandos": [
+            "uname -p"
+          ]
+        },
+        {
+          "tipo": "ejecutado",
+          "comandos": [
+            "uname -i"
+          ]
+        },
+        {
+          "tipo": "ejecutado",
+          "comandos": [
+            "uname -s"
+          ]
+        },
+        {
+          "tipo": "ejecutado",
+          "comandos": [
+            "uname -o"
+          ]
+        },
+        {
+          "tipo": "ejecutado",
+          "comandos": [
+            "uname -a"
+          ]
+        }
+      ]
+    },
+    {
+      "texto": {
+        "es": "El expediente debe incluir febrero de 2028 en informes/reunion.txt. Guarda la salida de cal en ese archivo. Consulta también los tres meses alrededor del actual, el año actual completo y un calendario que empiece en lunes. COMPROBAR.",
+        "eu": "Espedienteak 2028ko otsaila jaso behar du informes/reunion.txt fitxategian. Gorde cal komandoaren irteera fitxategi horretan. Kontsultatu uneko hilabetearen inguruko hiru hilabeteak, uneko urte osoa eta astelehenean hasten den egutegi bat ere. COMPROBAR."
+      },
+      "pistas": {
+        "es": [
+          "El archivo está dentro de expediente. Para lunes en Ubuntu con ncal: ncal -b -M.",
+          "cal 2 2028 > expediente/informes/reunion.txt\ncal -3\ncal -y\nncal -b -M\nCOMPROBAR"
+        ],
+        "eu": [
+          "Fitxategia expediente barruan dago. Astelehenerako, Ubuntu eta ncal erabiliz: ncal -b -M.",
+          "cal 2 2028 > expediente/informes/reunion.txt\ncal -3\ncal -y\nncal -b -M\nCOMPROBAR"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "salida",
+          "ruta": "expediente/informes/reunion.txt",
+          "consulta": "cal_fijo"
+        },
+        {
+          "tipo": "ejecutado",
+          "comandos": [
+            "cal -y"
+          ]
+        },
+        {
+          "tipo": "ejecutado",
+          "comandos": [
+            "ncal -b -M",
+            "ncal -M -b",
+            "cal -m",
+            "cal --monday"
+          ]
+        },
+        {
+          "tipo": "ejecutado",
+          "comandos": [
+            "cal -3"
+          ]
+        }
+      ]
+    },
+    {
+      "texto": {
+        "es": "Localiza date y uname en una sola consulta y guarda el resultado en expediente/informes/herramientas.txt. Antes, consulta man whereis e info date para repasar las ayudas. COMPROBAR.",
+        "eu": "Aurkitu date eta uname kontsulta bakarrean eta gorde emaitza expediente/informes/herramientas.txt fitxategian. Aurretik, kontsultatu man whereis eta info date laguntzak berrikusteko. COMPROBAR."
+      },
+      "pistas": {
+        "es": [
+          "Las páginas de ayuda se cierran con q; la salida de whereis sí se guarda con >.",
+          "man whereis\ninfo date\nwhereis date uname > expediente/informes/herramientas.txt\nCOMPROBAR"
+        ],
+        "eu": [
+          "Laguntza-orrietatik irteteko sakatu q; whereis-en irteera > erabiliz gordetzen da.",
+          "man whereis\ninfo date\nwhereis date uname > expediente/informes/herramientas.txt\nCOMPROBAR"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "salida",
+          "ruta": "expediente/informes/herramientas.txt",
+          "consulta": "ubicacion"
+        },
+        {
+          "tipo": "ejecutado",
+          "comandos": [
+            "man whereis"
+          ]
+        },
+        {
+          "tipo": "ejecutado",
+          "comandos": [
+            "info date"
+          ]
+        }
+      ]
+    },
+    {
+      "texto": {
+        "es": "Comprueba la fecha actual y preséntala en una sola línea con día, mes y nombre del día de la semana. Consulta también las sesiones y su información adicional. COMPROBAR pedirá la fecha formateada.",
+        "eu": "Egiaztatu uneko data eta erakutsi lerro bakarrean eguna, hilabetea eta asteko egunaren izena. Kontsultatu saioak eta informazio osagarria ere. COMPROBAR aukerak formateatutako data eskatuko du."
+      },
+      "pistas": {
+        "es": [
+          "Distingue date, who y whoami.",
+          "date\ndate \"+%d %m %A\"\nwho\nwho -a\nCOMPROBAR"
+        ],
+        "eu": [
+          "Bereizi date, who eta whoami.",
+          "date\ndate \"+%d %m %A\"\nwho\nwho -a\nCOMPROBAR"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "ejecutado",
+          "comandos": [
+            "date"
+          ]
+        },
+        {
+          "tipo": "ejecutado",
+          "comandos": [
+            "who"
+          ]
+        },
+        {
+          "tipo": "ejecutado",
+          "comandos": [
+            "who -a",
+            "who --all"
+          ]
+        },
+        {
+          "tipo": "respuesta_sistema",
+          "consulta": "fecha_detalle",
+          "pregunta": {
+            "es": "Fecha formateada:",
+            "eu": "Formateatutako data:"
+          }
+        }
+      ]
+    },
+    {
+      "texto": {
+        "es": "Crea y prueba dos atajos: turno limpia pantalla, muestra usuario y fecha; resumen muestra el sistema operativo y el nombre de equipo. Lista los alias. COMPROBAR.",
+        "eu": "Sortu eta probatu bi lasterbide: turno-k pantaila garbitu, erabiltzailea eta data erakusten ditu; resumen-ek sistema eragilea eta ekipoaren izena erakusten ditu. Zerrendatu aliasak. COMPROBAR."
+      },
+      "pistas": {
+        "es": [
+          "Usa comillas y separa las órdenes internas con ;. Ejecuta los alias en otra línea.",
+          "alias turno='clear; whoami; date'\nalias resumen='uname -o; uname -n'\nturno\nresumen\nalias\nCOMPROBAR"
+        ],
+        "eu": [
+          "Erabili komatxoak eta bereizi barruko aginduak ; erabiliz. Exekutatu aliasak beste lerro batean.",
+          "alias turno='clear; whoami; date'\nalias resumen='uname -o; uname -n'\nturno\nresumen\nalias\nCOMPROBAR"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "alias",
+          "nombre": "turno",
+          "valores": [
+            "clear; whoami; date",
+            "clear && whoami && date"
+          ]
+        },
+        {
+          "tipo": "alias",
+          "nombre": "resumen",
+          "valores": [
+            "uname -o; uname -n",
+            "uname -o && uname -n"
+          ]
+        },
+        {
+          "tipo": "ejecutado",
+          "comandos": [
+            "turno"
+          ]
+        },
+        {
+          "tipo": "ejecutado",
+          "comandos": [
+            "resumen"
+          ]
+        },
+        {
+          "tipo": "ejecutado",
+          "comandos": [
+            "alias",
+            "alias -p"
+          ]
+        }
+      ]
+    },
+    {
+      "texto": {
+        "es": "Investiga los paquetes usando el aviso. Mueve el archivo sospechoso a cuarentena/incidencia.txt. Conserva intactos los otros paquetes y las evidencias. Mover este texto es solo una simulación, no una desinfección real. COMPROBAR.",
+        "eu": "Ikertu paketeak abisua erabiliz. Mugitu fitxategi susmagarria cuarentena/incidencia.txt bidera. Mantendu beste paketeak eta frogak aldatu gabe. Testu hau mugitzea simulazio bat da, ez benetako desinfekzioa. COMPROBAR."
+      },
+      "pistas": {
+        "es": [
+          "Lee el contenido de los tres paquetes; busca NIEBLA-42.",
+          "cat fuentes/aviso.txt\ncat archivo/paquetes/resumen.txt\nmv archivo/paquetes/resumen.txt cuarentena/incidencia.txt\nCOMPROBAR"
+        ],
+        "eu": [
+          "Irakurri hiru paketeen edukia; bilatu NIEBLA-42.",
+          "cat fuentes/aviso.txt\ncat archivo/paquetes/resumen.txt\nmv archivo/paquetes/resumen.txt cuarentena/incidencia.txt\nCOMPROBAR"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "contenido",
+          "ruta": "cuarentena/incidencia.txt",
+          "origen": "archivo/paquetes/resumen.txt"
+        },
+        {
+          "tipo": "ausente",
+          "ruta": "archivo/paquetes/resumen.txt"
+        },
+        {
+          "tipo": "contenido",
+          "ruta": "archivo/paquetes/registro.txt",
+          "origen": "archivo/paquetes/registro.txt"
+        },
+        {
+          "tipo": "contenido",
+          "ruta": "archivo/paquetes/antivirus.txt",
+          "origen": "archivo/paquetes/antivirus.txt"
+        }
+      ]
+    },
+    {
+      "texto": {
+        "es": "Revisa el historial con history. Elimina el alias turno y conserva resumen. Crea expediente/listo.txt vacío. COMPROBAR revisará todo el expediente y preguntará qué comando cambiaría tu contraseña. Identifícalo sin ejecutarlo.",
+        "eu": "Berrikusi historia history erabiliz. Kendu turno aliasa eta mantendu resumen. Sortu expediente/listo.txt hutsik. COMPROBAR aukerak espediente osoa egiaztatu eta zure pasahitza aldatzeko komandoa galdetuko du. Identifikatu, exekutatu gabe."
+      },
+      "pistas": {
+        "es": [
+          "Usa unalias, touch y el nombre del comando de contraseñas.",
+          "history\nunalias turno\ntouch expediente/listo.txt\nCOMPROBAR → passwd"
+        ],
+        "eu": [
+          "Erabili unalias, touch eta pasahitzen komandoaren izena.",
+          "history\nunalias turno\ntouch expediente/listo.txt\nCOMPROBAR → passwd"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "carpeta",
+          "ruta": "expediente/informes"
+        },
+        {
+          "tipo": "carpeta",
+          "ruta": "expediente/copias"
+        },
+        {
+          "tipo": "contenido",
+          "ruta": "expediente/copias/aviso.txt",
+          "origen": "fuentes/aviso.txt"
+        },
+        {
+          "tipo": "contenido",
+          "ruta": "expediente/protocolo.txt",
+          "origen": "fuentes/normas.txt"
+        },
+        {
+          "tipo": "contenido",
+          "ruta": "fuentes/aviso.txt",
+          "origen": "fuentes/aviso.txt"
+        },
+        {
+          "tipo": "contenido",
+          "ruta": "fuentes/normas.txt",
+          "origen": "fuentes/normas.txt"
+        },
+        {
+          "tipo": "salida",
+          "ruta": "expediente/informes/operador.txt",
+          "consulta": "usuario"
+        },
+        {
+          "tipo": "salida",
+          "ruta": "expediente/informes/equipo.txt",
+          "consulta": "equipo"
+        },
+        {
+          "tipo": "salida",
+          "ruta": "expediente/informes/nucleo.txt",
+          "consulta": "version"
+        },
+        {
+          "tipo": "salida",
+          "ruta": "expediente/informes/arquitectura.txt",
+          "consulta": "arquitectura"
+        },
+        {
+          "tipo": "salida",
+          "ruta": "expediente/informes/reunion.txt",
+          "consulta": "cal_fijo"
+        },
+        {
+          "tipo": "salida",
+          "ruta": "expediente/informes/herramientas.txt",
+          "consulta": "ubicacion"
+        },
+        {
+          "tipo": "contenido",
+          "ruta": "cuarentena/incidencia.txt",
+          "origen": "archivo/paquetes/resumen.txt"
+        },
+        {
+          "tipo": "ausente",
+          "ruta": "archivo/paquetes/resumen.txt"
+        },
+        {
+          "tipo": "contenido",
+          "ruta": "archivo/paquetes/registro.txt",
+          "origen": "archivo/paquetes/registro.txt"
+        },
+        {
+          "tipo": "contenido",
+          "ruta": "archivo/paquetes/antivirus.txt",
+          "origen": "archivo/paquetes/antivirus.txt"
+        },
+        {
+          "tipo": "vacio",
+          "ruta": "expediente/listo.txt"
+        },
+        {
+          "tipo": "sin_alias",
+          "nombre": "turno"
+        },
+        {
+          "tipo": "alias",
+          "nombre": "resumen",
+          "valores": [
+            "uname -o; uname -n",
+            "uname -o && uname -n"
+          ]
+        },
+        {
+          "tipo": "ejecutado",
+          "comandos": [
+            "history"
+          ]
+        },
+        {
+          "tipo": "respuesta",
+          "pregunta": {
+            "es": "Comando de contraseñas:",
+            "eu": "Pasahitzen komandoa:"
+          },
+          "respuestas": {
+            "es": [
+              "passwd"
+            ],
+            "eu": [
+              "passwd"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "texto": {
+        "es": "El expediente ya está revisado. Limpia ahora el historial de esta actividad, comprueba que solo quedan las órdenes nuevas y ejecuta COMPROBAR. Si pides una pista, vuelve a limpiarlo antes de comprobar.",
+        "eu": "Espedientea berrikusita dago. Garbitu jarduerako historia, egiaztatu agindu berriak bakarrik geratzen direla eta exekutatu COMPROBAR. Pista eskatzen baduzu, garbitu berriro egiaztatu aurretik."
+      },
+      "pistas": {
+        "es": [
+          "Limpiar la pantalla y limpiar el historial son acciones diferentes.",
+          "history -c\nhistory\nCOMPROBAR"
+        ],
+        "eu": [
+          "Pantaila garbitzea eta historia garbitzea ekintza desberdinak dira.",
+          "history -c\nhistory\nCOMPROBAR"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "historial_limpio"
+        }
+      ]
+    },
+    {
+      "texto": {
+        "es": "Entrega del turno: sal de esta terminal con exit. En el menú vuelve a seleccionar la misión 10 y escribe COMPROBAR. Verificaremos que el expediente sigue completo y el alias resumen se ha conservado. No reinicies la actividad.",
+        "eu": "Txanda entregatzea: irten terminal honetatik exit erabiliz. Menuan hautatu berriro 10. misioa eta idatzi COMPROBAR. Espedientea osorik eta resumen aliasa mantendu direla egiaztatuko dugu. Ez berrabiarazi jarduera."
+      },
+      "pistas": {
+        "es": [
+          "El juego guarda los archivos y los alias por actividad.",
+          "exit\nMENU: 10\nCOMPROBAR"
+        ],
+        "eu": [
+          "Jokoak jarduera bakoitzeko fitxategiak eta aliasak gordetzen ditu.",
+          "exit\nMENU: 10\nCOMPROBAR"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "carpeta",
+          "ruta": "expediente/informes"
+        },
+        {
+          "tipo": "carpeta",
+          "ruta": "expediente/copias"
+        },
+        {
+          "tipo": "contenido",
+          "ruta": "expediente/copias/aviso.txt",
+          "origen": "fuentes/aviso.txt"
+        },
+        {
+          "tipo": "contenido",
+          "ruta": "expediente/protocolo.txt",
+          "origen": "fuentes/normas.txt"
+        },
+        {
+          "tipo": "contenido",
+          "ruta": "fuentes/aviso.txt",
+          "origen": "fuentes/aviso.txt"
+        },
+        {
+          "tipo": "contenido",
+          "ruta": "fuentes/normas.txt",
+          "origen": "fuentes/normas.txt"
+        },
+        {
+          "tipo": "salida",
+          "ruta": "expediente/informes/operador.txt",
+          "consulta": "usuario"
+        },
+        {
+          "tipo": "salida",
+          "ruta": "expediente/informes/equipo.txt",
+          "consulta": "equipo"
+        },
+        {
+          "tipo": "salida",
+          "ruta": "expediente/informes/nucleo.txt",
+          "consulta": "version"
+        },
+        {
+          "tipo": "salida",
+          "ruta": "expediente/informes/arquitectura.txt",
+          "consulta": "arquitectura"
+        },
+        {
+          "tipo": "salida",
+          "ruta": "expediente/informes/reunion.txt",
+          "consulta": "cal_fijo"
+        },
+        {
+          "tipo": "salida",
+          "ruta": "expediente/informes/herramientas.txt",
+          "consulta": "ubicacion"
+        },
+        {
+          "tipo": "contenido",
+          "ruta": "cuarentena/incidencia.txt",
+          "origen": "archivo/paquetes/resumen.txt"
+        },
+        {
+          "tipo": "ausente",
+          "ruta": "archivo/paquetes/resumen.txt"
+        },
+        {
+          "tipo": "contenido",
+          "ruta": "archivo/paquetes/registro.txt",
+          "origen": "archivo/paquetes/registro.txt"
+        },
+        {
+          "tipo": "contenido",
+          "ruta": "archivo/paquetes/antivirus.txt",
+          "origen": "archivo/paquetes/antivirus.txt"
+        },
+        {
+          "tipo": "vacio",
+          "ruta": "expediente/listo.txt"
+        },
+        {
+          "tipo": "reentrada"
+        },
+        {
+          "tipo": "alias",
+          "nombre": "resumen",
+          "valores": [
+            "uname -o; uname -n",
+            "uname -o && uname -n"
+          ]
+        }
+      ]
+    }
+  ],
+  "final": {
+    "es": "¡Misión completada! Puedes seguir practicando o escribir MENU.",
+    "eu": "Misioa osatuta! Praktikatzen jarraitu edo MENU idatzi dezakezu."
+  }
+}
